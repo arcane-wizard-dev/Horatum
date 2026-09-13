@@ -21,7 +21,7 @@
 
 ## X-BuildDate: @build-date@
 ## X-E-Mail: feedback@wow-addon.dev
-## X-Github: https://github.com/wow-addon-dev/Horatum
+## X-Github: https://github.com/arcane-wizard-dev/Horatum
 ## X-Curseforge: https://www.curseforge.com/wow/addons/horatum
 ## X-Wago: https://addons.wago.io/addons/horatum
 
