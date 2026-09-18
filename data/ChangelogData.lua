@@ -8,6 +8,14 @@ HRT.CHANGELOG = {
 		version = version,
 		date = buildDate ~= "" and buildDate or nil,
 		entries = {
+			"Changed: Character profiles now use GUIDs",
+			"Changed: Addon initialization stops if the player identity is unavailable"
+		}
+	},
+	{
+		version = "v2.25",
+		date = "2026-09-13",
+		entries = {
 			"Updated: GitHub links following the organization rename to 'arcane-wizard-dev'"
 		}
 	},
@@ -72,13 +80,6 @@ HRT.CHANGELOG = {
 		entries = {
 			"Added: Follower dungeon boss encounters are now tracked",
 			"Minor code adjustments"
-		}
-	},
-	{
-		version = "v2.16",
-		date = "2026-07-12",
-		entries = {
-			"Added: Wago project page button"
 		}
 	}
 }
