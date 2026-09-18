@@ -1,3 +1,7 @@
+**v2.26 (2026-09-18)**
+- Changed: Character profiles now use GUIDs
+- Changed: Addon initialization stops if the player identity is unavailable
+
 **v2.25 (2026-09-13)**
 - Updated: GitHub links following the organization rename to 'arcane-wizard-dev'
 
