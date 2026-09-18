@@ -9,6 +9,7 @@ local Options = HRT.Modules.Options
 local Utils = HRT.Modules.Utils
 
 -- Variables
+local isInitialized = false
 local isInCombat = false
 
 --------------
@@ -22,6 +23,8 @@ local HoratumFrame = CreateFrame("Frame", "Horatum")
 -----------------------
 
 local function SlashCommand(msg)
+	if not isInitialized then return end
+
 	local command = strtrim(msg or "")
 
 	if command == "" then
@@ -44,20 +47,28 @@ function HoratumFrame:OnEvent(event, ...)
 end
 
 function HoratumFrame:ADDON_LOADED(_, addOnName)
-	if addOnName == addonName then
-		local dbInit = Utils:InitializeDatabase()
-		Utils:InitializeMinimapButton()
-		Options:Initialize()
-		CombatTimeTracker:Initialize()
+	if addOnName ~= addonName or isInitialized then return end
 
-		Utils:OpenSettingsOnLoading()
+	local dbInit = Utils:InitializeDatabase()
 
-		Utils:PrintDebug(string.format(
-			"InitializeDatabase: key=%s, createdProfile=%s, createdProfileKey=%s, activeProfile=%s",
-			tostring(dbInit.characterRealmKey), tostring(dbInit.createdProfile), tostring(dbInit.createdProfileKey), tostring(dbInit.activeProfile)
-		))
-		Utils:PrintDebug("Addon fully loaded.")
+	if not dbInit then
+		AWL:GetAddon(addonName):AbortInitialization(self)
+		return
 	end
+
+	Utils:InitializeMinimapButton()
+	Options:Initialize()
+	CombatTimeTracker:Initialize()
+
+	Utils:OpenSettingsOnLoading()
+
+	isInitialized = true
+
+	Utils:PrintDebug(string.format(
+		"InitializeDatabase: key=%s, createdProfile=%s, createdProfileKey=%s, activeProfile=%s",
+		tostring(dbInit.characterGUID), tostring(dbInit.createdProfile), tostring(dbInit.createdProfileKey), tostring(dbInit.activeProfile)
+	))
+	Utils:PrintDebug("Addon fully loaded.")
 end
 
 function HoratumFrame:ENCOUNTER_START(_, encounterID, encounterName, difficultyID, groupSize)
