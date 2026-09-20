@@ -1,3 +1,6 @@
+**v2.27 (2026-09-20)**
+- Added: TOC version for patch 1.60.1 [forever]
+
 **v2.26 (2026-09-18)**
 - Changed: Character profiles now use GUIDs
 - Changed: Addon initialization stops if the player identity is unavailable
