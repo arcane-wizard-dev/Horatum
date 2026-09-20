@@ -8,6 +8,13 @@ HRT.CHANGELOG = {
 		version = version,
 		date = buildDate ~= "" and buildDate or nil,
 		entries = {
+			"Added: TOC version for patch 1.60.1 [forever]"
+		}
+	},
+	{
+		version = "v2.26",
+		date = "2026-09-18",
+		entries = {
 			"Changed: Character profiles now use GUIDs",
 			"Changed: Addon initialization stops if the player identity is unavailable"
 		}
@@ -72,14 +79,6 @@ HRT.CHANGELOG = {
 		date = "2026-07-28",
 		entries = {
 			"Adapted to the latest version of Arcane Wizard: Library to ensure full compatibility"
-		}
-	},
-	{
-		version = "v2.17",
-		date = "2026-07-18",
-		entries = {
-			"Added: Follower dungeon boss encounters are now tracked",
-			"Minor code adjustments"
 		}
 	}
 }
