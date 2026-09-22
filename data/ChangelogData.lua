@@ -8,6 +8,14 @@ HRT.CHANGELOG = {
 		version = version,
 		date = buildDate ~= "" and buildDate or nil,
 		entries = {
+			"Adapted to the latest version of Arcane Wizard: Library to ensure full compatibility",
+			"Minor code adjustments"
+		}
+	},
+	{
+		version = "v2.27",
+		date = "2026-09-20",
+		entries = {
 			"Added: TOC version for patch 1.60.1 [forever]"
 		}
 	},
@@ -72,13 +80,6 @@ HRT.CHANGELOG = {
 		date = "2026-08-04",
 		entries = {
 			"Minor code adjustments"
-		}
-	},
-	{
-		version = "v2.18",
-		date = "2026-07-28",
-		entries = {
-			"Adapted to the latest version of Arcane Wizard: Library to ensure full compatibility"
 		}
 	}
 }
