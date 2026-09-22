@@ -44,7 +44,7 @@ local function ParseDelveTier(tierText)
 end
 
 local function GetDecimalPlaces()
-	local decimalPlaces = tonumber(HRT.Settings.combatTimeTracker["decimal-places"]) or 3
+	local decimalPlaces = tonumber(HRT.Settings.combatTimeTracker["decimal-places"]) or HRT.OPTIONS_DEFAULTS["combat-time-tracker"]["decimal-places"]
 
 	return math.max(0, math.min(3, math.floor(decimalPlaces)))
 end
