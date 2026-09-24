@@ -32,7 +32,7 @@ Individual features and display options can be configured in the addon settings.
 ## Supported Languages & Flavors
 
 * Languages: English, German
-* Flavors: Retail, Forever
+* Flavors: Forever, Retail
 
 ## Installation & Quick Start
 
