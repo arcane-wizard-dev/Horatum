@@ -15,7 +15,6 @@ local CombatTimeTracker = HRT.Modules.CombatTimeTracker
 local Utils = HRT.Modules.Utils
 
 -- Variables
-local defaults = HRT.OPTIONS_DEFAULTS
 local minimapButtonProxy = setmetatable({}, {
 	__index = function(_, key)
 		if key == "hide" then
@@ -53,7 +52,7 @@ function Options:Initialize()
 		variableName	= "notification",
 		name			= L["options.general.notification.name"],
 		tooltip			= L["options.general.notification.tooltip"],
-		default			= defaults["general"]["notification"]
+		default			= HRT.OPTIONS_DEFAULTS["general"]["notification"]
 	})
 
 	-- Minimap Button
@@ -63,7 +62,7 @@ function Options:Initialize()
 		variableName	= "hide",
 		name			= L["options.general.minimap-button.name"],
 		tooltip			= L["options.general.minimap-button.tooltip"],
-		default			= not defaults.general["minimap-button"].hide
+		default			= not HRT.OPTIONS_DEFAULTS.general["minimap-button"].hide
 	})
 
 	-- Debug Mode
@@ -73,7 +72,7 @@ function Options:Initialize()
 		variableName	= "debug-mode",
 		name			= L["options.general.debug-mode.name"],
 		tooltip			= L["options.general.debug-mode.tooltip"],
-		default			= defaults["general"]["debug-mode"]
+		default			= HRT.OPTIONS_DEFAULTS["general"]["debug-mode"]
 	})
 
 	layout:AddInitializer(CreateSettingsListSectionHeaderInitializer(L["options.combat-time-tracker"]))
@@ -85,7 +84,7 @@ function Options:Initialize()
 		variableName	= "scale",
 		name			= L["options.combat-time-tracker.scale.name"],
 		tooltip			= L["options.combat-time-tracker.scale.tooltip"],
-		default			= defaults["combat-time-tracker"]["scale"], minValue = 50, maxValue = 150, step = 1,
+		default			= HRT.OPTIONS_DEFAULTS["combat-time-tracker"]["scale"], minValue = 50, maxValue = 150, step = 1,
 		formatter		= function(value) return value .. " %" end,
 		onClick			= function()
 			CombatTimeTracker:Show()
@@ -100,7 +99,7 @@ function Options:Initialize()
 		variableName	= "background-transparency",
 		name			= L["options.combat-time-tracker.background-transparency.name"],
 		tooltip			= L["options.combat-time-tracker.background-transparency.tooltip"],
-		default			= defaults["combat-time-tracker"]["background-transparency"], minValue = 0, maxValue = 100, step = 1,
+		default			= HRT.OPTIONS_DEFAULTS["combat-time-tracker"]["background-transparency"], minValue = 0, maxValue = 100, step = 1,
 		formatter		= function(value) return value .. " %" end,
 		onClick			= function()
 			CombatTimeTracker:Show()
@@ -115,7 +114,7 @@ function Options:Initialize()
 		variableName	= "decimal-places",
 		name			= L["options.combat-time-tracker.decimal-places.name"],
 		tooltip			= L["options.combat-time-tracker.decimal-places.tooltip"],
-		default			= defaults["combat-time-tracker"]["decimal-places"], minValue = 0, maxValue = 3, step = 1,
+		default			= HRT.OPTIONS_DEFAULTS["combat-time-tracker"]["decimal-places"], minValue = 0, maxValue = 3, step = 1,
 		formatter		= function(value) return tostring(value) end,
 		onClick			= function()
 			CombatTimeTracker:SetDecimalPlaces()
