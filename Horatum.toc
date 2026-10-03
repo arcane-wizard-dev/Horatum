@@ -3,7 +3,7 @@
 ## Author: Arcane Wizard | created by diomsg
 
 ## Version: @project-version@
-## IconTexture: Interface\AddOns\Horatum\assets\icon.blp
+## IconTexture: Interface\AddOns\Horatum\assets\icon.tga
 ## LoadOnDemand: 0
 ## DefaultState: enabled
 

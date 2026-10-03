@@ -4,4 +4,4 @@
 
 **Important note: This is an initial test version for World of Warcraft: Forever. Some addon features may not work correctly yet.**
 
-- Minor code adjustments
+- Updated: Logo
