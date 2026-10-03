@@ -55,8 +55,6 @@ function Options:Initialize()
 		default			= HRT.OPTIONS_DEFAULTS["general"]["notification"]
 	})
 
-	AWL.Settings:AddSeparator(layout)
-
 	-- Minimap Button
 	AWL.Settings:AddCheckbox(category, {
 		variableTable	= minimapButtonProxy,
