@@ -8,6 +8,13 @@ HRT.CHANGELOG = {
 		version = version,
 		date = buildDate ~= "" and buildDate or nil,
 		entries = {
+			"Updated: Logo"
+		}
+	},
+	{
+		version = "v2.29",
+		date = "2026-09-27",
+		entries = {
 			"Minor code adjustments"
 		}
 	},
@@ -72,14 +79,6 @@ HRT.CHANGELOG = {
 			"Removed: Version notice chat messages",
 			"Minor code adjustments",
 			"Adapted to the latest version of Arcane Wizard: Library to ensure full compatibility"
-		}
-	},
-	{
-		version = "v2.20",
-		date = "2026-08-14",
-		entries = {
-			"Added: World raid boss encounters are now tracked",
-			"Removed: TOC version for patch 12.0.7 [retail]"
 		}
 	}
 }
