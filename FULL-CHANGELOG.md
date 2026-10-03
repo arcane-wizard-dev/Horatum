@@ -1,3 +1,6 @@
+**v2.30 (2026-10-03)**
+- Updated: Logo
+
 **v2.29 (2026-09-27)**
 - Minor code adjustments
 
