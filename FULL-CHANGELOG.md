@@ -1,3 +1,7 @@
+**v2.31 (2026-10-05)**
+- Changed: Combat Time Tracker now uses the native Blizzard UI appearance with an optional tooltip border
+- Adapted to the latest version of Arcane Wizard: Library to ensure full compatibility
+
 **v2.30 (2026-10-03)**
 - Updated: Logo
 
