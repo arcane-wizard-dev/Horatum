@@ -121,6 +121,19 @@ function Options:Initialize()
 		end
 	})
 
+	-- Show Border
+	AWL.Settings:AddCheckbox(category, {
+		variableTable	= HRT.Settings.combatTimeTracker,
+		settingKey		= addonName .. "_show-border",
+		variableName	= "show-border",
+		name			= L["options.combat-time-tracker.show-border.name"],
+		tooltip			= L["options.combat-time-tracker.show-border.tooltip"],
+		default			= HRT.OPTIONS_DEFAULTS["combat-time-tracker"]["show-border"],
+		onClick			= function()
+			CombatTimeTracker:SetBorderShown()
+		end
+	})
+
 	-- Profiles Section
 	AWL.Settings:AddProfilesSection(layout, {
 		useAccountProfile			= Addon:IsAccountProfile(),

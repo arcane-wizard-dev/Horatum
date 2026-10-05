@@ -156,13 +156,15 @@ local function InitializeFrames()
 	CombatTimeTrackerFrame = AWL.Frames:CreatePopup({
 		width = FrameData.width,
 		height = FrameData.initialHeight,
-		backgroundStyle = FrameData.backgroundStyle,
+		style = FrameData.style,
 		backgroundAlpha = HRT.Settings.combatTimeTracker["background-transparency"] / 100,
-		showBorder = FrameData.showBorder,
+		showBorder = HRT.Settings.combatTimeTracker["show-border"] ~= false,
 		showCloseButton = FrameData.showCloseButton,
+		closeButton = FrameData.closeButton,
 		movable = FrameData.movable,
 		closeOnEscape = FrameData.closeOnEscape
 	})
+	CombatTimeTrackerFrame:SetBackdropColor(unpack(FrameData.backgroundColor))
 	CombatTimeTrackerFrame:SetScale(HRT.Settings.combatTimeTracker["scale"] / 100)
 	CombatTimeTrackerFrame:SetScript("OnDragStop", function(self)
 		self:StopMovingOrSizing()
@@ -175,14 +177,17 @@ local function InitializeFrames()
 	end)
 
 	local content = CombatTimeTrackerFrame.content
+	content:ClearAllPoints()
+	content:SetPoint("TOPLEFT", FrameData.contentPadding.x, -FrameData.contentPadding.y)
+	content:SetPoint("BOTTOMRIGHT", -FrameData.contentPadding.x, FrameData.contentPadding.y)
 
 	CombatTimeTrackerFrame.timer = content:CreateFontString(nil, "OVERLAY", "GameFontHighlightHuge")
-	CombatTimeTrackerFrame.timer:SetPoint("TOP", content, "TOP", 0, -5)
+	CombatTimeTrackerFrame.timer:SetPoint("TOP", content, "TOP", 0, -FrameData.timerOffset)
 	CombatTimeTrackerFrame.timer:SetText(FormatTime(0))
 
 	CombatTimeTrackerFrame.timeBar = CreateFrame("StatusBar", nil, content)
 	CombatTimeTrackerFrame.timeBar:SetSize(160, 10)
-	CombatTimeTrackerFrame.timeBar:SetPoint("TOP", CombatTimeTrackerFrame.timer, "BOTTOM", 0, -8)
+	CombatTimeTrackerFrame.timeBar:SetPoint("TOP", CombatTimeTrackerFrame.timer, "BOTTOM", 0, -FrameData.rowSpacing)
 	CombatTimeTrackerFrame.timeBar:SetStatusBarTexture("Interface\\TargetingFrame\\UI-StatusBar")
 	CombatTimeTrackerFrame.timeBar:SetMinMaxValues(0, 1)
 	CombatTimeTrackerFrame.timeBar:SetValue(1)
@@ -201,13 +206,13 @@ local function InitializeFrames()
 	})
 
 	CombatTimeTrackerFrame.name = content:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-	CombatTimeTrackerFrame.name:SetPoint("TOP", CombatTimeTrackerFrame.timeBar, "BOTTOM", 0, -8)
+	CombatTimeTrackerFrame.name:SetPoint("TOP", CombatTimeTrackerFrame.timeBar, "BOTTOM", 0, -FrameData.rowSpacing)
 	CombatTimeTrackerFrame.name:SetWidth(160)
 	CombatTimeTrackerFrame.name:SetWordWrap(false)
 	CombatTimeTrackerFrame.name:SetText(L["combat-time-tracker.wait-combat"])
 
 	CombatTimeTrackerFrame.difficulty = content:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
-	CombatTimeTrackerFrame.difficulty:SetPoint("TOP", CombatTimeTrackerFrame.name, "BOTTOM", 0, -3)
+	CombatTimeTrackerFrame.difficulty:SetPoint("TOP", CombatTimeTrackerFrame.name, "BOTTOM", 0, -FrameData.difficultySpacing)
 	CombatTimeTrackerFrame.difficulty:SetWidth(140)
 	CombatTimeTrackerFrame.difficulty:SetWordWrap(false)
 	CombatTimeTrackerFrame.difficulty:SetText("-")
@@ -218,8 +223,8 @@ local function InitializeFrames()
 	end)
 
 	CombatTimeTrackerFrame.resetButton = CreateFrame("Button", nil, CombatTimeTrackerFrame)
-	CombatTimeTrackerFrame.resetButton:SetSize(16, 16)
-	CombatTimeTrackerFrame.resetButton:SetPoint("BOTTOMRIGHT", CombatTimeTrackerFrame, "BOTTOMRIGHT", -4, 4)
+	CombatTimeTrackerFrame.resetButton:SetSize(FrameData.resetButton.size, FrameData.resetButton.size)
+	CombatTimeTrackerFrame.resetButton:SetPoint("BOTTOMRIGHT", CombatTimeTrackerFrame, "BOTTOMRIGHT", FrameData.resetButton.x, FrameData.resetButton.y)
 	CombatTimeTrackerFrame.resetButton:SetNormalTexture("Interface\\Buttons\\UI-RefreshButton")
 	CombatTimeTrackerFrame.resetButton:SetHighlightTexture("Interface\\Buttons\\UI-Panel-MinimizeButton-Highlight")
 	CombatTimeTrackerFrame.resetButton:SetPushedTexture("Interface\\Buttons\\UI-RefreshButton")
@@ -227,7 +232,7 @@ local function InitializeFrames()
 	local pushedTexture = CombatTimeTrackerFrame.resetButton:GetPushedTexture()
 	pushedTexture:ClearAllPoints()
 	pushedTexture:SetPoint("CENTER", CombatTimeTrackerFrame.resetButton, "CENTER", 1, -1)
-	pushedTexture:SetSize(16, 16)
+	pushedTexture:SetSize(FrameData.resetButton.size, FrameData.resetButton.size)
 
 	CombatTimeTrackerFrame.resetButton:SetScript("OnEnter", function(self)
 		GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
@@ -247,12 +252,12 @@ local function InitializeFrames()
 		CombatTimeTrackerFrame.difficulty:SetText("-")
 	end)
 
-	local height = 15
+	local height = FrameData.contentPadding.y + FrameData.timerOffset
 	height = height + CombatTimeTrackerFrame.timer:GetStringHeight()
-	height = height + 7 + CombatTimeTrackerFrame.timeBar:GetHeight()
-	height = height + 7 + CombatTimeTrackerFrame.name:GetStringHeight()
-	height = height + 3 + CombatTimeTrackerFrame.difficulty:GetStringHeight()
-	height = height + 15
+	height = height + FrameData.rowSpacing + CombatTimeTrackerFrame.timeBar:GetHeight()
+	height = height + FrameData.rowSpacing + CombatTimeTrackerFrame.name:GetStringHeight()
+	height = height + FrameData.difficultySpacing + CombatTimeTrackerFrame.difficulty:GetStringHeight()
+	height = height + FrameData.contentPadding.y
 
 	CombatTimeTrackerFrame:SetHeight(height)
 
@@ -434,6 +439,10 @@ end
 
 function CombatTimeTracker:SetBackgroundTransparency()
 	CombatTimeTrackerFrame.background:SetAlpha(HRT.Settings.combatTimeTracker["background-transparency"] / 100)
+end
+
+function CombatTimeTracker:SetBorderShown()
+	CombatTimeTrackerFrame:SetBorderShown(HRT.Settings.combatTimeTracker["show-border"] ~= false)
 end
 
 function CombatTimeTracker:SetDecimalPlaces()

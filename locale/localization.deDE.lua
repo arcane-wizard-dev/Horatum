@@ -15,6 +15,8 @@ L["options.general.debug-mode.name"] = "Debugmodus"
 L["options.general.debug-mode.tooltip"] = "Die Aktivierung des Debugmodus zeigt zusätzliche Informationen im Chat an."
 
 L["options.combat-time-tracker"] = "Kampfzeiten-Tracker"
+L["options.combat-time-tracker.show-border.name"] = "Rahmen anzeigen"
+L["options.combat-time-tracker.show-border.tooltip"] = "Zeigt einen Rahmen um den Kampfzeiten-Tracker an."
 L["options.combat-time-tracker.scale.name"] = "UI-Skalierung"
 L["options.combat-time-tracker.scale.tooltip"] = "Legt die Größenskalierung des Kampfzeiten-Trackers fest."
 L["options.combat-time-tracker.background-transparency.name"] = "Hintergrundtransparenz"

@@ -12,6 +12,7 @@ HRT.OPTIONS_DEFAULTS = {
 		["debug-mode"] = false,
 	},
 	["combat-time-tracker"] = {
+		["show-border"] = true,
 		["scale"] = 100,
 		["background-transparency"] = 60,
 		["decimal-places"] = 3,
