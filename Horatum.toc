@@ -11,6 +11,7 @@
 
 ## Notes: This addon tracks every boss encounter and saves the fastest victory.
 ## Notes-deDE: Dieses Addon zeichnet jeden Bosskampf auf und speichert den schnellsten Sieg.
+## Notes-ruRU: Этот аддон отслеживает каждый бой с боссом и сохраняет время самой быстрой победы.
 
 ## LoadSavedVariablesFirst: 1
 ## SavedVariables: Horatum_Options_v3, Horatum_CombatEncounterData_v2

@@ -61,6 +61,7 @@ local function FormatTime(duration)
 	end
 
 	local secondsWidth = decimalPlaces + 3
+
 	return string.format("%02d:%0" .. secondsWidth .. "." .. decimalPlaces .. "f", minutes, seconds)
 end
 
@@ -166,6 +167,7 @@ local function InitializeFrames()
 	})
 	CombatTimeTrackerFrame:SetBackdropColor(unpack(FrameData.backgroundColor))
 	CombatTimeTrackerFrame:SetScale(HRT.Settings.combatTimeTracker["scale"] / 100)
+
 	CombatTimeTrackerFrame:SetScript("OnDragStop", function(self)
 		self:StopMovingOrSizing()
 
@@ -239,9 +241,11 @@ local function InitializeFrames()
 		GameTooltip:SetText(L["combat-time-tracker.button-reset"], 1, 1, 1)
 		GameTooltip:Show()
 	end)
+
 	CombatTimeTrackerFrame.resetButton:SetScript("OnLeave", function()
 		GameTooltip:Hide()
 	end)
+
 	CombatTimeTrackerFrame.resetButton:SetScript("OnClick", function()
 		displayedTime = 0
 		CombatTimeTrackerFrame.timer:SetText(FormatTime(displayedTime))

@@ -54,6 +54,7 @@ function HoratumFrame:ADDON_LOADED(_, addOnName)
 
 	if not dbInit then
 		Addon:AbortInitialization(self)
+
 		return
 	end
 

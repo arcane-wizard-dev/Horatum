@@ -84,7 +84,10 @@ function Options:Initialize()
 		variableName	= "scale",
 		name			= L["options.combat-time-tracker.scale.name"],
 		tooltip			= L["options.combat-time-tracker.scale.tooltip"],
-		default			= HRT.OPTIONS_DEFAULTS["combat-time-tracker"]["scale"], minValue = 50, maxValue = 150, step = 1,
+		default			= HRT.OPTIONS_DEFAULTS["combat-time-tracker"]["scale"],
+		minValue = 50,
+		maxValue = 150,
+		step = 1,
 		formatter		= function(value) return value .. " %" end,
 		onClick			= function()
 			CombatTimeTracker:Show()
@@ -99,7 +102,10 @@ function Options:Initialize()
 		variableName	= "background-transparency",
 		name			= L["options.combat-time-tracker.background-transparency.name"],
 		tooltip			= L["options.combat-time-tracker.background-transparency.tooltip"],
-		default			= HRT.OPTIONS_DEFAULTS["combat-time-tracker"]["background-transparency"], minValue = 0, maxValue = 100, step = 1,
+		default			= HRT.OPTIONS_DEFAULTS["combat-time-tracker"]["background-transparency"],
+		minValue = 0,
+		maxValue = 100,
+		step = 1,
 		formatter		= function(value) return value .. " %" end,
 		onClick			= function()
 			CombatTimeTracker:Show()
@@ -114,7 +120,10 @@ function Options:Initialize()
 		variableName	= "decimal-places",
 		name			= L["options.combat-time-tracker.decimal-places.name"],
 		tooltip			= L["options.combat-time-tracker.decimal-places.tooltip"],
-		default			= HRT.OPTIONS_DEFAULTS["combat-time-tracker"]["decimal-places"], minValue = 0, maxValue = 3, step = 1,
+		default			= HRT.OPTIONS_DEFAULTS["combat-time-tracker"]["decimal-places"],
+		minValue = 0,
+		maxValue = 3,
+		step = 1,
 		formatter		= function(value) return tostring(value) end,
 		onClick			= function()
 			CombatTimeTracker:SetDecimalPlaces()
