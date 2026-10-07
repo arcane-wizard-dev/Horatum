@@ -70,7 +70,17 @@ local function EncounterInfo(difficultyID)
 
 	Utils:PrintDebug(string.format(
 		"Result from GetDifficultyInfo(): name=%s, instanceType=%s, isHeroic=%s, isChallengeMode=%s, displayHeroic=%s, displayMythic=%s, toggleDifficultyID=%s, isLFR=%s, minPlayers=%s, maxPlayers=%s, isUserSelectable=%s",
-		tostring(name),	tostring(instanceType),	tostring(isHeroic),	tostring(isChallengeMode), tostring(displayHeroic), tostring(displayMythic), tostring(toggleDifficultyID), tostring(isLFR), tostring(minPlayers), tostring(maxPlayers), tostring(isUserSelectable)
+		tostring(name),
+		tostring(instanceType),
+		tostring(isHeroic),
+		tostring(isChallengeMode),
+		tostring(displayHeroic),
+		tostring(displayMythic),
+		tostring(toggleDifficultyID),
+		tostring(isLFR),
+		tostring(minPlayers),
+		tostring(maxPlayers),
+		tostring(isUserSelectable)
 	))
 
 	if difficultyID == 1 then				-- Dungeon Normal
@@ -266,7 +276,13 @@ local function InitializeFrames()
 	CombatTimeTrackerFrame:SetHeight(height)
 
 	CombatTimeTrackerFrame:ClearAllPoints()
-	CombatTimeTrackerFrame:SetPoint(HRT.Settings.combatTimeTracker["point"], UIParent, HRT.Settings.combatTimeTracker["relative-point"], HRT.Settings.combatTimeTracker["offset-x"], HRT.Settings.combatTimeTracker["offset-y"])
+	CombatTimeTrackerFrame:SetPoint(
+		HRT.Settings.combatTimeTracker["point"],
+		UIParent,
+		HRT.Settings.combatTimeTracker["relative-point"],
+		HRT.Settings.combatTimeTracker["offset-x"],
+		HRT.Settings.combatTimeTracker["offset-y"]
+	)
 
 	if HRT.Settings.combatTimeTracker["is-visible"] then
 		CombatTimeTrackerFrame:Show()

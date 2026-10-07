@@ -68,7 +68,11 @@ function HoratumFrame:ADDON_LOADED(_, addOnName)
 
 	Utils:PrintDebug(string.format(
 		"InitializeDatabase: key=%s, createdProfile=%s, createdProfileKey=%s, cleanedOptions=%s, activeProfile=%s",
-		tostring(dbInit.characterGUID), tostring(dbInit.createdProfile), tostring(dbInit.createdProfileKey), tostring(dbInit.cleanedOptions), tostring(dbInit.activeProfile)
+		tostring(dbInit.characterGUID),
+		tostring(dbInit.createdProfile),
+		tostring(dbInit.createdProfileKey),
+		tostring(dbInit.cleanedOptions),
+		tostring(dbInit.activeProfile)
 	))
 	Utils:PrintDebug("Addon fully loaded.")
 end
