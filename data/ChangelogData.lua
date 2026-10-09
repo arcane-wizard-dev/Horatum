@@ -8,6 +8,14 @@ HRT.CHANGELOG = {
 		version = version,
 		date = buildDate ~= "" and buildDate or nil,
 		entries = {
+			"Added: ruRU localization",
+			"Minor code adjustments"
+		}
+	},
+	{
+		version = "v2.31",
+		date = "2026-10-05",
+		entries = {
 			"Changed: Combat Time Tracker now uses the native Blizzard UI appearance with an optional tooltip border",
 			"Adapted to the latest version of Arcane Wizard: Library to ensure full compatibility"
 		}
@@ -68,14 +76,6 @@ HRT.CHANGELOG = {
 		date = "2026-08-30",
 		entries = {
 			"Minor code adjustments"
-		}
-	},
-	{
-		version = "v2.22",
-		date = "2026-08-21",
-		entries = {
-			"Changed: The number of decimal places displayed for combat times can now be configured from 0 to 3",
-			"Changed: Combat Time Tracker window has been adapted to the Arcane Wizard: Library design"
 		}
 	}
 }
