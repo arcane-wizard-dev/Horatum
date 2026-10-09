@@ -1,3 +1,7 @@
+**v2.32 (2026-10-09)**
+- Added: ruRU localization
+- Minor code adjustments
+
 **v2.31 (2026-10-05)**
 - Changed: Combat Time Tracker now uses the native Blizzard UI appearance with an optional tooltip border
 - Adapted to the latest version of Arcane Wizard: Library to ensure full compatibility
