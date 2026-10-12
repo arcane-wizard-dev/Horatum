@@ -5,4 +5,5 @@
 
 	<Script file="ChangelogData.lua" />
 	<Script file="CombatTimeTrackerData.lua" />
+	<Script file="ui/CombatTimeTrackerUIConfig.lua" />
 </Ui>

@@ -3,6 +3,7 @@ local addonName, HRT = ...
 HRT.Settings = HRT.Settings or {}
 HRT.Data = HRT.Data or {}
 HRT.State = HRT.State or {}
+HRT.UIConfig = HRT.UIConfig or {}
 HRT.Modules = HRT.Modules or {}
 
 HRT.Modules.CombatTimeTracker = HRT.Modules.CombatTimeTracker or {}
