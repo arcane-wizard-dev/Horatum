@@ -8,6 +8,13 @@ HRT.CHANGELOG = {
 		version = version,
 		date = buildDate ~= "" and buildDate or nil,
 		entries = {
+			"Refactoring of the addon structure and source code"
+		}
+	},
+	{
+		version = "v2.32",
+		date = "2026-10-09",
+		entries = {
 			"Added: ruRU localization",
 			"Minor code adjustments"
 		}
@@ -69,13 +76,6 @@ HRT.CHANGELOG = {
 		date = "2026-09-06",
 		entries = {
 			"Added: TOC version for patch 12.1.5 [retail]"
-		}
-	},
-	{
-		version = "v2.23",
-		date = "2026-08-30",
-		entries = {
-			"Minor code adjustments"
 		}
 	}
 }
