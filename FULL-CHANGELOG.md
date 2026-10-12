@@ -1,3 +1,6 @@
+**v2.33 (2026-10-12)**
+- Refactoring of the addon structure and source code
+
 **v2.32 (2026-10-09)**
 - Added: ruRU localization
 - Minor code adjustments
