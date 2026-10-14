@@ -2,6 +2,8 @@ local _, HRT = ...
 
 HRT.Localization = setmetatable({},{
 	__index=function(self,key)
+		rawset(self, key, key)
+
 		geterrorhandler()("Horatum (Debug): Missing entry for '" .. tostring(key) .. "'")
 
 		return key
