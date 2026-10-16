@@ -9,6 +9,13 @@ HRT.CHANGELOG = {
 		version = version,
 		date = buildDate ~= "" and buildDate or nil,
 		entries = {
+			"Adapted to the latest version of Arcane Wizard: Library to ensure full compatibility"
+		}
+	},
+	{
+		version = "v2.34",
+		date = "2026-10-14",
+		entries = {
 			"Fixed: Repeated error messages for missing translations"
 		}
 	},
@@ -70,13 +77,6 @@ HRT.CHANGELOG = {
 		entries = {
 			"Changed: Character profiles now use GUIDs",
 			"Changed: Addon initialization stops if the player identity is unavailable"
-		}
-	},
-	{
-		version = "v2.25",
-		date = "2026-09-13",
-		entries = {
-			"Updated: GitHub links following the organization rename to 'arcane-wizard-dev'"
 		}
 	}
 }
