@@ -1,4 +1,4 @@
-local _, HRT = ...
+local addonName, HRT = ...
 
 -- Library
 local AWL = ArcaneWizardLibrary
@@ -165,6 +165,7 @@ end
 
 local function InitializeFrames()
 	CombatTimeTrackerFrame = AWL.Frames:CreatePopup({
+		addonName = addonName,
 		width = CombatTimeTrackerConfig.width,
 		height = CombatTimeTrackerConfig.initialHeight,
 		style = CombatTimeTrackerConfig.style,
