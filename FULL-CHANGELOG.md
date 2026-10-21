@@ -1,3 +1,6 @@
+**v2.36 (2026-10-21)**
+- Changed: Chat command 'show' renamed to 'tracker'
+
 **v2.35 (2026-10-16)**
 - Adapted to the latest version of Arcane Wizard: Library to ensure full compatibility
 
