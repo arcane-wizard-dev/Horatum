@@ -9,6 +9,13 @@ HRT.CHANGELOG = {
 		version = version,
 		date = buildDate ~= "" and buildDate or nil,
 		entries = {
+			"Changed: Chat command 'show' renamed to 'tracker'"
+		}
+	},
+	{
+		version = "v2.35",
+		date = "2026-10-16",
+		entries = {
 			"Adapted to the latest version of Arcane Wizard: Library to ensure full compatibility"
 		}
 	},
@@ -69,14 +76,6 @@ HRT.CHANGELOG = {
 		date = "2026-09-20",
 		entries = {
 			"Added: Support for 'Forever'"
-		}
-	},
-	{
-		version = "v2.26",
-		date = "2026-09-18",
-		entries = {
-			"Changed: Character profiles now use GUIDs",
-			"Changed: Addon initialization stops if the player identity is unavailable"
 		}
 	}
 }
