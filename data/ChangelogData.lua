@@ -1,10 +1,13 @@
 local addonName, HRT = ...
 
+if HRT.State and HRT.State.libraryIncompatible then return end
+
 local version = C_AddOns.GetAddOnMetadata(addonName, "Version") or ""
 local buildDate = C_AddOns.GetAddOnMetadata(addonName, "X-BuildDate") or ""
 
 HRT.CHANGELOG = {
 	notices = {},
+	-- BEGIN GENERATED CHANGELOG
 	{
 		version = version,
 		date = buildDate ~= "" and buildDate or nil,
@@ -78,4 +81,5 @@ HRT.CHANGELOG = {
 			"Added: Support for 'Forever'"
 		}
 	}
+	-- END GENERATED CHANGELOG
 }

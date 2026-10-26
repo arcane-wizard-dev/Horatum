@@ -1,5 +1,7 @@
 local addonName, HRT = ...
 
+if HRT.State and HRT.State.libraryIncompatible then return end
+
 -- Library
 local AWL = ArcaneWizardLibrary
 local Addon = AWL:GetAddon(addonName)

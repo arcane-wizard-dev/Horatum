@@ -1,5 +1,7 @@
 local _, HRT = ...
 
+if HRT.State and HRT.State.libraryIncompatible then return end
+
 HRT.UIConfig.CombatTimeTracker = {
 	width = 200,
 	initialHeight = 112,

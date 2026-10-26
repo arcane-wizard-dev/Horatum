@@ -1,5 +1,7 @@
 local _, HRT = ...
 
+if HRT.State and HRT.State.libraryIncompatible then return end
+
 HRT.Localization = setmetatable({},{
 	__index=function(self,key)
 		rawset(self, key, key)
@@ -52,4 +54,5 @@ L["combat-time-tracker.button-reset"] = "Reset display"
 L["combat-time-tracker.wait-combat"] = "Waiting for combat to begin..."
 L["combat-time-tracker.dungeon"] = "Dungeon"
 L["combat-time-tracker.raid"] = "Raid"
+L["combat-time-tracker.event"] = "Event"
 L["combat-time-tracker.delves-tier"] = "Tier"

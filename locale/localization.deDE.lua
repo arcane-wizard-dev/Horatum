@@ -1,5 +1,7 @@
 local _, HRT = ...
 
+if HRT.State and HRT.State.libraryIncompatible then return end
+
 if GetLocale() ~= "deDE" then return end
 
 local L = HRT.Localization
@@ -44,4 +46,5 @@ L["combat-time-tracker.button-reset"] = "Anzeige zurücksetzen"
 L["combat-time-tracker.wait-combat"] = "Warte auf Kampfbeginn..."
 L["combat-time-tracker.dungeon"] = "Dungeon"
 L["combat-time-tracker.raid"] = "Schlachtzug"
+L["combat-time-tracker.event"] = "Ereignis"
 L["combat-time-tracker.delves-tier"] = "Stufe"

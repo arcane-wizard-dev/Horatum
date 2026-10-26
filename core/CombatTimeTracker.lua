@@ -1,5 +1,7 @@
 local addonName, HRT = ...
 
+if HRT.State and HRT.State.libraryIncompatible then return end
+
 -- Library
 local AWL = ArcaneWizardLibrary
 
@@ -111,6 +113,8 @@ local function EncounterInfo(difficultyID)
 		return true, 0, L["combat-time-tracker.raid"] .. " - " .. name
 	elseif difficultyID == 17 then			-- Raid Schlachtzugbrowser
 		return true, 0, L["combat-time-tracker.raid"] .. " - " .. name
+	elseif difficultyID == 19 then			-- Ereignis (Event)
+		return true, 0, L["combat-time-tracker.event"] .. " - " .. name
 	elseif difficultyID == 33 then			-- Raid Zeitenwanderung
 		return true, 0, L["combat-time-tracker.raid"] .. " - " .. name
 	elseif difficultyID == 220 then			-- Raid Geschichtenmodus
@@ -164,6 +168,7 @@ end
 -----------------------
 
 local function InitializeFrames()
+	---@class HoratumCombatTimeTrackerFrame: ArcaneWizardLibraryPopupFrame
 	CombatTimeTrackerFrame = AWL.Frames:CreatePopup({
 		addonName = addonName,
 		width = CombatTimeTrackerConfig.width,

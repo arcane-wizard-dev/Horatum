@@ -8,6 +8,7 @@
 ## DefaultState: enabled
 
 ## Dependencies: ArcaneWizardLibrary
+## X-Library-Revision: 1
 
 ## Notes: This addon tracks every boss encounter and saves the fastest victory.
 ## Notes-deDE: Dieses Addon zeichnet jeden Bosskampf auf und speichert den schnellsten Sieg.
@@ -26,5 +27,6 @@
 ## X-Curseforge: https://www.curseforge.com/wow/addons/horatum
 ## X-Wago: https://addons.wago.io/addons/horatum
 
+LibraryCompatibility.lua
 Horatum.xml
 Horatum.lua

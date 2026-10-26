@@ -1,5 +1,7 @@
 local addonName, HRT = ...
 
+if HRT.State and HRT.State.libraryIncompatible then return end
+
 HRT.Settings = HRT.Settings or {}
 HRT.Data = HRT.Data or {}
 HRT.State = HRT.State or {}

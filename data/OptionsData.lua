@@ -1,5 +1,7 @@
 local _, HRT = ...
 
+if HRT.State and HRT.State.libraryIncompatible then return end
+
 HRT.OPTIONS_DEFAULTS = {
 	["general"] = {
 		["minimap-button"] = {

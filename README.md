@@ -2,17 +2,17 @@
 
 [![GitHub Release](https://img.shields.io/github/v/release/arcane-wizard-dev/Horatum?color=blue&logo=github&cacheSeconds=600)](https://github.com/arcane-wizard-dev/Horatum/releases) [![GitHub Release Date](https://img.shields.io/github/release-date/arcane-wizard-dev/Horatum?color=blue&logo=github&cacheSeconds=600)](https://github.com/arcane-wizard-dev/Horatum/releases)
 
-_Master the clock. Conquer the combat._
+_Every second counts._
 
-Horatum is a World of Warcraft addon that tracks every boss encounter and saves the fastest victories. It provides real-time feedback during combat and keeps a record of your performance across different difficulties.
+Horatum is a World of Warcraft addon that times supported boss encounters, shows the elapsed fight time live, and records kills, wipes and your fastest victories for each boss and difficulty.
 
 > ⚠️ **Important!** This addon requires **Arcane Wizard: Library**. See Installation & Quick Start for installation details.
 
 ## Key Features
 
-**Combat Time Tracker** - During a boss encounter, a small window will appear displaying the current combat time.
+**Combat Time Tracker** - Follow the current fight duration in a small, movable and scalable timer window.
 
-**Combat Overview** (Planned) - All boss combat times and other information can be displayed in an overview window.
+**Combat Overview** (Planned) - An overview window for recorded boss encounter times and statistics is planned.
 
 ## Features
 
@@ -20,7 +20,7 @@ Individual features and display options can be configured in the addon settings.
 
 ### Combat Tracking
 
-* Automatically starts when a dungeon or raid boss is engaged and stops the exact moment the combat ends or the group wipes.
+* Automatically starts the timer for supported boss encounters and stops it when the game reports a victory or wipe.
 * Features a clean, semi-transparent frame that displays the ongoing combat time.
 * The number of victories and wipes is saved and can be displayed in the chat after combat.
 
