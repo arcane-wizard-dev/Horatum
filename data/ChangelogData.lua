@@ -12,6 +12,16 @@ HRT.CHANGELOG = {
 		version = version,
 		date = buildDate ~= "" and buildDate or nil,
 		entries = {
+			"Added: Startup check for the minimum required Library revision",
+			"Updated: deDE, enUS, ruRU localizations",
+			"Updated: Addon description",
+			"Minor code adjustments"
+		}
+	},
+	{
+		version = "v2.36",
+		date = "2026-10-21",
+		entries = {
 			"Changed: Chat command 'show' renamed to 'tracker'"
 		}
 	},
@@ -72,13 +82,6 @@ HRT.CHANGELOG = {
 		entries = {
 			"Adapted to the latest version of Arcane Wizard: Library to ensure full compatibility",
 			"Minor code adjustments"
-		}
-	},
-	{
-		version = "v2.27",
-		date = "2026-09-20",
-		entries = {
-			"Added: Support for 'Forever'"
 		}
 	}
 	-- END GENERATED CHANGELOG
