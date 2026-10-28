@@ -10,9 +10,9 @@
 ## Dependencies: ArcaneWizardLibrary
 ## X-Library-Revision: 1
 
-## Notes: This addon tracks every boss encounter and saves the fastest victory.
-## Notes-deDE: Dieses Addon zeichnet jeden Bosskampf auf und speichert den schnellsten Sieg.
-## Notes-ruRU: Этот аддон отслеживает каждый бой с боссом и сохраняет время самой быстрой победы.
+## Notes: This addon keeps track of timing and results for supported boss encounters. Its display accompanies the current fight, and the results are saved for later reference.
+## Notes-deDE: Dieses Addon erfasst Zeiten und Ergebnisse unterstützter Bosskämpfe. Die Anzeige begleitet den laufenden Kampf, und die Ergebnisse werden für später gespeichert.
+## Notes-ruRU: Этот аддон отслеживает время и результаты поддерживаемых боёв с боссами. Его окно помогает следить за текущим боем, а результаты сохраняются для последующего просмотра.
 
 ## LoadSavedVariablesFirst: 1
 ## SavedVariables: Horatum_Options_v3, Horatum_CombatEncounterData_v2

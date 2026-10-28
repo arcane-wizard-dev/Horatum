@@ -4,15 +4,15 @@
 
 _Every second counts._
 
-Horatum is a World of Warcraft addon that times supported boss encounters, shows the elapsed fight time live, and records kills, wipes and your fastest victories for each boss and difficulty.
+Horatum is a World of Warcraft addon that keeps track of timing and results for supported boss encounters. Its display accompanies the current fight, and the results are saved for later reference.
 
 > ⚠️ **Important!** This addon requires **Arcane Wizard: Library**. See Installation & Quick Start for installation details.
 
-## Key Features
+## Key Feature
 
-**Combat Time Tracker** - Follow the current fight duration in a small, movable and scalable timer window.
+**Combat Time Tracker** - Shows the duration of the current encounter in a customizable timer display that fits into the interface.
 
-**Combat Overview** (Planned) - An overview window for recorded boss encounter times and statistics is planned.
+**Combat Overview** (Planned) - An overview of recorded encounter data is planned that gathers all results in one central place.
 
 ## Features
 
@@ -22,11 +22,11 @@ Individual features and display options can be configured in the addon settings.
 
 * Automatically starts the timer for supported boss encounters and stops it when the game reports a victory or wipe.
 * Features a clean, semi-transparent frame that displays the ongoing combat time.
-* The number of victories and wipes is saved and can be displayed in the chat after combat.
+* Saves victories and wipes and can post them to chat after combat.
 
 ### Display Customization
 
-* The Combat Time Tracker can be dragged and dropped to any location on the screen.
+* The Combat Time Tracker can be moved anywhere on the screen.
 * The size of the Combat Time Tracker can be easily adjusted to fit the user interface.
 
 ## Supported Languages & Flavors
@@ -36,9 +36,9 @@ Individual features and display options can be configured in the addon settings.
 
 ## Installation & Quick Start
 
-> **Required Dependency:** This addon requires the **Arcane Wizard: Library**. If you install Horatum via the CurseForge client, the library will be downloaded automatically. If you install the addon manually, via Wago, or through another third-party updater that does not resolve dependencies, you must download and enable the library separately.
+> **Required Dependency:** This addon requires **Arcane Wizard: Library**. If you install Horatum via the CurseForge client, the library will be downloaded automatically. If you install the addon manually, via Wago, or through another third-party updater that does not resolve dependencies, you must download and enable the library separately.
 
-To manage the addon, use the following commands in your chat and press enter:
+To manage the addon, type the following commands in chat and press Enter:
 
 * Type `/hrt` or `/horatum` to access the addon options menu.
 * Type `/hrt changelog` or `/horatum changelog` to open the changelog.
@@ -46,7 +46,7 @@ To manage the addon, use the following commands in your chat and press enter:
 
 ## Bugs & Feedback
 
-If you find a bug or have a suggestion, please use the GitHub Issues or the CurseForge comments.
+If you find a bug or have a suggestion, please open a GitHub issue or leave a comment on CurseForge.
 
 ## Translation Support
 

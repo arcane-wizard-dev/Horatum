@@ -12,38 +12,38 @@ L["options.general"] = "Allgemeine Einstellungen"
 L["options.general.notification.name"] = "Chatbenachrichtigung"
 L["options.general.notification.tooltip"] = "Zeigt nach dem Kampf eine Chatbenachrichtigung an."
 L["options.general.minimap-button.name"] = "Minimap-Button"
-L["options.general.minimap-button.tooltip"] = "Bei Aktivierung wird der Minimap-Button angezeigt."
+L["options.general.minimap-button.tooltip"] = "Zeigt den Minimap-Button an."
 L["options.general.debug-mode.name"] = "Debugmodus"
-L["options.general.debug-mode.tooltip"] = "Die Aktivierung des Debugmodus zeigt zusätzliche Informationen im Chat an."
+L["options.general.debug-mode.tooltip"] = "Zeigt zusätzliche Debuginformationen im Chat an."
 
-L["options.combat-time-tracker"] = "Kampfzeiten-Tracker"
+L["options.combat-time-tracker"] = "Kampfzeitanzeige"
 L["options.combat-time-tracker.show-border.name"] = "Rahmen anzeigen"
-L["options.combat-time-tracker.show-border.tooltip"] = "Zeigt einen Rahmen um den Kampfzeiten-Tracker an."
-L["options.combat-time-tracker.scale.name"] = "UI-Skalierung"
-L["options.combat-time-tracker.scale.tooltip"] = "Legt die Größenskalierung des Kampfzeiten-Trackers fest."
+L["options.combat-time-tracker.show-border.tooltip"] = "Zeigt einen Rahmen um die Kampfzeitanzeige an."
+L["options.combat-time-tracker.scale.name"] = "Skalierung"
+L["options.combat-time-tracker.scale.tooltip"] = "Legt die Größe der Kampfzeitanzeige fest."
 L["options.combat-time-tracker.background-transparency.name"] = "Hintergrundtransparenz"
-L["options.combat-time-tracker.background-transparency.tooltip"] = "Legt die Hintergrundtransparenz des Kampfzeiten-Trackers fest."
+L["options.combat-time-tracker.background-transparency.tooltip"] = "Legt die Hintergrundtransparenz der Kampfzeitanzeige fest."
 L["options.combat-time-tracker.decimal-places.name"] = "Nachkommastellen"
 L["options.combat-time-tracker.decimal-places.tooltip"] = "Legt fest, wie viele Nachkommastellen bei Kampfzeiten angezeigt werden."
 
 -- General
 
-L["minimap-button.tooltip"] = "|cnLINK_FONT_COLOR:Linksklick|r zum Anzeigen oder Ausblenden des Kampfzeiten-Trackers.\n|cnLINK_FONT_COLOR:Rechtsklick|r zum Öffnen der Einstellungen."
+L["minimap-button.tooltip"] = "|cnLINK_FONT_COLOR:Linksklick|r zum Anzeigen oder Ausblenden der Kampfzeitanzeige.\n|cnLINK_FONT_COLOR:Rechtsklick|r zum Öffnen der Einstellungen."
 
 -- Chat
 
-L["chat.current-record"] = "Deine aktuelle Bestzeit für |cnGOLD_FONT_COLOR:%s|r (%s) ist %s."
-L["chat.new-record"] = "Deine neue Bestzeit für |cnGOLD_FONT_COLOR:%s|r (%s) ist %s."
+L["chat.current-record"] = "Aktuelle Bestzeit für |cnGOLD_FONT_COLOR:%s|r (%s): %s."
+L["chat.new-record"] = "Neue Bestzeit für |cnGOLD_FONT_COLOR:%s|r (%s): %s."
 
-L["chat.first-victory"] = "Dies war dein erster Sieg über |cnGOLD_FONT_COLOR:%s|r (%s). (Niederlagen: %s)"
-L["chat.another-victory"] = "Du hast |cnGOLD_FONT_COLOR:%s|r (%s) bereits besiegt. (Siege: %s - Niederlagen: %s)"
-L["chat.first-wipe"] = "Dies war deine erste Niederlage gegen |cnGOLD_FONT_COLOR:%s|r (%s). (Siege: %s)"
-L["chat.another-wipe"] = "Du hast gegen |cnGOLD_FONT_COLOR:%s|r (%s) bereits verloren. (Siege: %s - Niederlagen: %s)"
+L["chat.first-victory"] = "Erster Sieg über |cnGOLD_FONT_COLOR:%s|r (%s). (Niederlagen: %s)"
+L["chat.another-victory"] = "|cnGOLD_FONT_COLOR:%s|r (%s) wurde bereits besiegt. (Siege: %s - Niederlagen: %s)"
+L["chat.first-wipe"] = "Erste Niederlage gegen |cnGOLD_FONT_COLOR:%s|r (%s). (Siege: %s)"
+L["chat.another-wipe"] = "Gegen |cnGOLD_FONT_COLOR:%s|r (%s) gab es bereits Niederlagen. (Siege: %s - Niederlagen: %s)"
 
 -- Combat Time Tracker
 
 L["combat-time-tracker.button-reset"] = "Anzeige zurücksetzen"
-L["combat-time-tracker.wait-combat"] = "Warte auf Kampfbeginn..."
+L["combat-time-tracker.wait-combat"] = "Warte auf Kampfbeginn…"
 L["combat-time-tracker.dungeon"] = "Dungeon"
 L["combat-time-tracker.raid"] = "Schlachtzug"
 L["combat-time-tracker.event"] = "Ereignis"

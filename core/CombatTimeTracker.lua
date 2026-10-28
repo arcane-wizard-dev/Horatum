@@ -12,10 +12,9 @@ local L = HRT.Localization
 local CombatTimeTracker = HRT.Modules.CombatTimeTracker
 
 -- Module imports
-local Utils = HRT.Modules.Utils
-
--- Data
 local CombatTimeTrackerConfig = HRT.UIConfig.CombatTimeTracker
+local CombatTimeTrackerData = HRT.COMBAT_TIME_TRACKER_DATA
+local Utils = HRT.Modules.Utils
 
 -- Variables
 local startTime = 0
@@ -31,7 +30,7 @@ local displayedTime = 0
 --- Frames ---
 --------------
 
-local CombatTimeTrackerFrame
+local CombatTimeTrackerFrame = nil
 
 -----------------------
 --- Local Functions ---
@@ -48,7 +47,7 @@ end
 local function GetDecimalPlaces()
 	local decimalPlaces = tonumber(HRT.Settings.combatTimeTracker["decimal-places"]) or HRT.OPTIONS_DEFAULTS["combat-time-tracker"]["decimal-places"]
 
-	return math.max(0, math.min(3, math.floor(decimalPlaces)))
+	return math.max(0, math.min(CombatTimeTrackerData.maximumDecimalPlaces, math.floor(decimalPlaces)))
 end
 
 local function FormatTime(duration)
@@ -85,51 +84,20 @@ local function EncounterInfo(difficultyID)
 		tostring(isUserSelectable)
 	))
 
-	if difficultyID == 1 then				-- Dungeon Normal
-		return true, 0, L["combat-time-tracker.dungeon"] .. " - " .. name
-	elseif difficultyID == 2 then			-- Dungeon Heroisch
-		return true, 0, L["combat-time-tracker.dungeon"] .. " - " .. name
-	elseif difficultyID == 23 then			-- Dungeon Mythisch
-		return true, 0, L["combat-time-tracker.dungeon"] .. " - " .. name
-	elseif difficultyID == 24 then			-- Dungeon Zeitenwanderung
-		return true, 0, L["combat-time-tracker.dungeon"] .. " - " .. name
-	elseif difficultyID == 205 then			-- Dungeon Anhänger
-		return true, 0, L["combat-time-tracker.dungeon"] .. " - " .. name
-	elseif difficultyID == 3 then			-- Raid 10er Normal (legacy)
-		return true, 0, L["combat-time-tracker.raid"] .. " - " .. name
-	elseif difficultyID == 4 then			-- Raid 25er Normal (legacy)
-		return true, 0, L["combat-time-tracker.raid"] .. " - " .. name
-	elseif difficultyID == 5 then			-- Raid 10er Heroisch (legacy)
-		return true, 0, L["combat-time-tracker.raid"] .. " - " .. name
-	elseif difficultyID == 6 then			-- Raid 25er Heroisch (legacy)
-		return true, 0, L["combat-time-tracker.raid"] .. " - " .. name
-	elseif difficultyID == 9 then			-- Raid 40er (legacy)
-		return true, 0, L["combat-time-tracker.raid"] .. " - " .. name
-	elseif difficultyID == 14 then			-- Raid Normal (flexibel)
-		return true, 0, L["combat-time-tracker.raid"] .. " - " .. name
-	elseif difficultyID == 15 then			-- Raid Heroisch (flexibel)
-		return true, 0, L["combat-time-tracker.raid"] .. " - " .. name
-	elseif difficultyID == 16 then			-- Raid Mythisch
-		return true, 0, L["combat-time-tracker.raid"] .. " - " .. name
-	elseif difficultyID == 17 then			-- Raid Schlachtzugbrowser
-		return true, 0, L["combat-time-tracker.raid"] .. " - " .. name
-	elseif difficultyID == 19 then			-- Ereignis (Event)
-		return true, 0, L["combat-time-tracker.event"] .. " - " .. name
-	elseif difficultyID == 33 then			-- Raid Zeitenwanderung
-		return true, 0, L["combat-time-tracker.raid"] .. " - " .. name
-	elseif difficultyID == 220 then			-- Raid Geschichtenmodus
-		return true, 0, L["combat-time-tracker.raid"] .. " - " .. name
-	elseif difficultyID == 233 then			-- Raid Mythisch (flexibel)
-		return true, 0, L["combat-time-tracker.raid"] .. " - " .. name
-	elseif difficultyID == 250 then			-- Raid Welt
-		return true, 0, L["combat-time-tracker.raid"] .. " - " .. name
-	elseif difficultyID == 208  then		-- Tiefe
-		local delveData1, delveData2, delveData3 = C_UIWidgetManager.GetScenarioHeaderDelvesWidgetVisualizationInfo(6183), C_UIWidgetManager.GetScenarioHeaderDelvesWidgetVisualizationInfo(6184), C_UIWidgetManager.GetScenarioHeaderDelvesWidgetVisualizationInfo(6185)
+	local labelKey = CombatTimeTrackerData.difficultyLabels[difficultyID]
+
+	if labelKey then
+		return true, 0, L[labelKey] .. " - " .. name
+	elseif difficultyID == CombatTimeTrackerData.delve.difficultyID then
+		local delve = CombatTimeTrackerData.delve
+		local delveData1 = C_UIWidgetManager.GetScenarioHeaderDelvesWidgetVisualizationInfo(delve.tierWidgetID)
+		local delveData2 = C_UIWidgetManager.GetScenarioHeaderDelvesWidgetVisualizationInfo(delve.firstSpecialWidgetID)
+		local delveData3 = C_UIWidgetManager.GetScenarioHeaderDelvesWidgetVisualizationInfo(delve.secondSpecialWidgetID)
 
 		if delveData2 and delveData2.shownState and delveData2.shownState == 1 then
-			return true, 8, name .. " - " .. L["combat-time-tracker.delves-tier"] .. " ?"
+			return true, delve.firstSpecialTier, name .. " - " .. L["combat-time-tracker.delves-tier"] .. " ?"
 		elseif delveData3 and delveData3.shownState and delveData3.shownState == 1 then
-			return true, 11, name .. " - " .. L["combat-time-tracker.delves-tier"] .. " ??"
+			return true, delve.secondSpecialTier, name .. " - " .. L["combat-time-tracker.delves-tier"] .. " ??"
 		elseif delveData1 and delveData1.tierText then
 			local delveTier = ParseDelveTier(delveData1.tierText)
 
@@ -138,7 +106,6 @@ local function EncounterInfo(difficultyID)
 			end
 
 			return false, 0, nil
-		else
 		end
 	end
 
@@ -155,10 +122,10 @@ local function UpdateTimerFrame(self, elapsed)
 
 		if remainingTime > 0 then
 			CombatTimeTrackerFrame.timeBar:SetValue(remainingTime)
-			CombatTimeTrackerFrame.timeBar:SetStatusBarColor(0, 1, 0)
+			CombatTimeTrackerFrame.timeBar:SetStatusBarColor(unpack(CombatTimeTrackerConfig.timeBar.colors.withinBest))
 		else
 			CombatTimeTrackerFrame.timeBar:SetValue(currentBestVictory)
-			CombatTimeTrackerFrame.timeBar:SetStatusBarColor(1, 0, 0)
+			CombatTimeTrackerFrame.timeBar:SetStatusBarColor(unpack(CombatTimeTrackerConfig.timeBar.colors.overBest))
 		end
 	end
 end
@@ -204,34 +171,34 @@ local function InitializeFrames()
 	CombatTimeTrackerFrame.timer:SetText(FormatTime(0))
 
 	CombatTimeTrackerFrame.timeBar = CreateFrame("StatusBar", nil, content)
-	CombatTimeTrackerFrame.timeBar:SetSize(160, 10)
+	CombatTimeTrackerFrame.timeBar:SetSize(CombatTimeTrackerConfig.timeBar.width, CombatTimeTrackerConfig.timeBar.height)
 	CombatTimeTrackerFrame.timeBar:SetPoint("TOP", CombatTimeTrackerFrame.timer, "BOTTOM", 0, -CombatTimeTrackerConfig.rowSpacing)
-	CombatTimeTrackerFrame.timeBar:SetStatusBarTexture("Interface\\TargetingFrame\\UI-StatusBar")
+	CombatTimeTrackerFrame.timeBar:SetStatusBarTexture(CombatTimeTrackerConfig.timeBar.texture)
 	CombatTimeTrackerFrame.timeBar:SetMinMaxValues(0, 1)
 	CombatTimeTrackerFrame.timeBar:SetValue(1)
-	CombatTimeTrackerFrame.timeBar:SetStatusBarColor(0.5, 0.5, 0.5)
+	CombatTimeTrackerFrame.timeBar:SetStatusBarColor(unpack(CombatTimeTrackerConfig.timeBar.colors.idle))
 
 	local timeBarBackground = CombatTimeTrackerFrame.timeBar:CreateTexture(nil, "BACKGROUND")
 	timeBarBackground:SetAllPoints(CombatTimeTrackerFrame.timeBar, true)
-	timeBarBackground:SetColorTexture(0.2, 0.2, 0.2, 0.8)
+	timeBarBackground:SetColorTexture(unpack(CombatTimeTrackerConfig.timeBar.backgroundColor))
 
 	local timeBarBorder = CreateFrame("Frame", nil, CombatTimeTrackerFrame.timeBar, "BackdropTemplate")
-	timeBarBorder:SetPoint("TOPLEFT", CombatTimeTrackerFrame.timeBar, "TOPLEFT", -3, 3)
-	timeBarBorder:SetPoint("BOTTOMRIGHT", CombatTimeTrackerFrame.timeBar, "BOTTOMRIGHT", 3, -3)
+	timeBarBorder:SetPoint("TOPLEFT", CombatTimeTrackerFrame.timeBar, "TOPLEFT", -CombatTimeTrackerConfig.timeBar.border.padding, CombatTimeTrackerConfig.timeBar.border.padding)
+	timeBarBorder:SetPoint("BOTTOMRIGHT", CombatTimeTrackerFrame.timeBar, "BOTTOMRIGHT", CombatTimeTrackerConfig.timeBar.border.padding, -CombatTimeTrackerConfig.timeBar.border.padding)
 	timeBarBorder:SetBackdrop({
-		edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
-		edgeSize = 8
+		edgeFile = CombatTimeTrackerConfig.timeBar.border.texture,
+		edgeSize = CombatTimeTrackerConfig.timeBar.border.edgeSize
 	})
 
 	CombatTimeTrackerFrame.name = content:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
 	CombatTimeTrackerFrame.name:SetPoint("TOP", CombatTimeTrackerFrame.timeBar, "BOTTOM", 0, -CombatTimeTrackerConfig.rowSpacing)
-	CombatTimeTrackerFrame.name:SetWidth(160)
+	CombatTimeTrackerFrame.name:SetWidth(CombatTimeTrackerConfig.nameWidth)
 	CombatTimeTrackerFrame.name:SetWordWrap(false)
 	CombatTimeTrackerFrame.name:SetText(L["combat-time-tracker.wait-combat"])
 
 	CombatTimeTrackerFrame.difficulty = content:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
 	CombatTimeTrackerFrame.difficulty:SetPoint("TOP", CombatTimeTrackerFrame.name, "BOTTOM", 0, -CombatTimeTrackerConfig.difficultySpacing)
-	CombatTimeTrackerFrame.difficulty:SetWidth(140)
+	CombatTimeTrackerFrame.difficulty:SetWidth(CombatTimeTrackerConfig.difficultyWidth)
 	CombatTimeTrackerFrame.difficulty:SetWordWrap(false)
 	CombatTimeTrackerFrame.difficulty:SetText("-")
 
@@ -267,7 +234,7 @@ local function InitializeFrames()
 		CombatTimeTrackerFrame.timer:SetText(FormatTime(displayedTime))
 		CombatTimeTrackerFrame.timeBar:SetMinMaxValues(0, 1)
 		CombatTimeTrackerFrame.timeBar:SetValue(1)
-		CombatTimeTrackerFrame.timeBar:SetStatusBarColor(0.5, 0.5, 0.5)
+		CombatTimeTrackerFrame.timeBar:SetStatusBarColor(unpack(CombatTimeTrackerConfig.timeBar.colors.idle))
 		CombatTimeTrackerFrame.name:SetText(L["combat-time-tracker.wait-combat"])
 		CombatTimeTrackerFrame.difficulty:SetText("-")
 	end)
@@ -314,7 +281,7 @@ function CombatTimeTracker:EncounterStart(encounterID, encounterName, difficulty
 
 	Utils:PrintDebug(string.format(
 		"Result from EncounterInfo(): isValidEncounter=%s, optionalID=%s, difficulty=%s",
-		tostring(isValidEncounter),	tostring(optionalID), tostring(difficulty)
+		tostring(isValidEncounter), tostring(optionalID), tostring(difficulty)
 	))
 
 	if not isValidEncounter then return false end
@@ -356,11 +323,11 @@ function CombatTimeTracker:EncounterStart(encounterID, encounterName, difficulty
 	if currentBestVictory >= HRT.COMBAT_TIME_TRACKER_THRESHOLD then
 		CombatTimeTrackerFrame.timeBar:SetMinMaxValues(0, currentBestVictory)
 		CombatTimeTrackerFrame.timeBar:SetValue(currentBestVictory)
-		CombatTimeTrackerFrame.timeBar:SetStatusBarColor(0, 1, 0)
+		CombatTimeTrackerFrame.timeBar:SetStatusBarColor(unpack(CombatTimeTrackerConfig.timeBar.colors.withinBest))
 	else
 		CombatTimeTrackerFrame.timeBar:SetMinMaxValues(0, 1)
 		CombatTimeTrackerFrame.timeBar:SetValue(1)
-		CombatTimeTrackerFrame.timeBar:SetStatusBarColor(0, 0.5, 1)
+		CombatTimeTrackerFrame.timeBar:SetStatusBarColor(unpack(CombatTimeTrackerConfig.timeBar.colors.noBest))
 	end
 
 	CombatTimeTrackerFrame:SetScript("OnUpdate", UpdateTimerFrame)
@@ -380,7 +347,7 @@ function CombatTimeTracker:EncounterEnd(success)
 	))
 
 	if finalTime < HRT.COMBAT_TIME_TRACKER_THRESHOLD then
-		finalTime = 0.001
+		finalTime = HRT.COMBAT_TIME_TRACKER_THRESHOLD
 	else
 		finalTime = math.floor(finalTime * 1000 + 0.5) / 1000
 	end
