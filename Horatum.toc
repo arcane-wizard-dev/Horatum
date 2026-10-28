@@ -10,9 +10,9 @@
 ## Dependencies: ArcaneWizardLibrary
 ## X-Library-Revision: 1
 
-## Notes: This addon keeps track of timing and results for supported boss encounters. Its display accompanies the current fight, and the results are saved for later reference.
-## Notes-deDE: Dieses Addon erfasst Zeiten und Ergebnisse unterstützter Bosskämpfe. Die Anzeige begleitet den laufenden Kampf, und die Ergebnisse werden für später gespeichert.
-## Notes-ruRU: Этот аддон отслеживает время и результаты поддерживаемых боёв с боссами. Его окно помогает следить за текущим боем, а результаты сохраняются для последующего просмотра.
+## Notes: This addon tracks the duration and results of supported boss encounters. A customizable timer shows the current fight’s duration, and the results are saved.
+## Notes-deDE: Dieses Addon erfasst die Dauer und Ergebnisse unterstützter Bosskämpfe. Die laufende Kampfzeit erscheint in einer anpassbaren Anzeige, und die Ergebnisse werden gespeichert.
+## Notes-ruRU: Этот аддон отслеживает длительность и результаты поддерживаемых боёв с боссами. Настраиваемый таймер показывает длительность текущего боя, а результаты сохраняются.
 
 ## LoadSavedVariablesFirst: 1
 ## SavedVariables: Horatum_Options_v3, Horatum_CombatEncounterData_v2

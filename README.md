@@ -4,15 +4,15 @@
 
 _Every second counts._
 
-Horatum is a World of Warcraft addon that keeps track of timing and results for supported boss encounters. Its display accompanies the current fight, and the results are saved for later reference.
+Horatum is a World of Warcraft addon that tracks the duration and results of supported boss encounters. A customizable timer shows the current fight’s duration, and the results are saved.
 
 > ⚠️ **Important!** This addon requires **Arcane Wizard: Library**. See Installation & Quick Start for installation details.
 
-## Key Feature
+## Key Features
 
-**Combat Time Tracker** - Shows the duration of the current encounter in a customizable timer display that fits into the interface.
+**Combat Time Tracker** - Track the duration of the current encounter with a customizable display that fits into your interface.
 
-**Combat Overview** (Planned) - An overview of recorded encounter data is planned that gathers all results in one central place.
+**Combat Overview** (Planned) - A central overview of recorded encounter data is planned, making it easier to review results in one place.
 
 ## Features
 
