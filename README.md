@@ -21,13 +21,13 @@ Individual features and display options can be configured in the addon settings.
 ### Combat Tracking
 
 * Automatically starts the timer for supported boss encounters and stops it when the game reports a victory or wipe.
-* Features a clean, semi-transparent frame that displays the ongoing combat time.
-* Saves victories and wipes and can post them to chat after combat.
+* Shows the current encounter duration in a semi-transparent frame.
+* Records victories and wipes and can post them to chat after combat.
 
 ### Display Customization
 
 * The Combat Time Tracker can be moved anywhere on the screen.
-* The size of the Combat Time Tracker can be easily adjusted to fit the user interface.
+* Lets you resize the Combat Time Tracker to fit the user interface.
 
 ## Supported Languages & Flavors
 
