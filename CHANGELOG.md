@@ -3,5 +3,6 @@
 [Full Changelog](@full-changelog@) - [Previous Releases](https://github.com/arcane-wizard-dev/Horatum/releases)
 
 - Added: Startup check for the minimum required Library revision
+- Updated: deDE, enUS, ruRU localizations
 - Updated: Addon description
 - Minor code adjustments
