@@ -1,3 +1,9 @@
+**v2.37 (2026-10-28)**
+- Added: Startup check for the minimum required Library revision
+- Updated: deDE, enUS, ruRU localizations
+- Updated: Addon description
+- Minor code adjustments
+
 **v2.36 (2026-10-21)**
 - Changed: Chat command 'show' renamed to 'tracker'
 
