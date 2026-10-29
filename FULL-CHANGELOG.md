@@ -1,3 +1,9 @@
+**v2.38 (2026-10-29)**
+- Added: TOC version for patch 12.1.7 [retail]
+- Changed: Combat times, victories, and wipes are now saved per character, starting with empty records
+- Updated: Addon description
+- Removed: TOC version for patch 12.1.0 [retail]
+
 **v2.37 (2026-10-28)**
 - Added: Startup check for the minimum required Library revision
 - Updated: deDE, enUS, ruRU localizations
