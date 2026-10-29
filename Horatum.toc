@@ -1,4 +1,4 @@
-## Interface: 120105, 120100, 16001
+## Interface: 120107, 120105, 16001
 ## Title: Horatum
 ## Author: Arcane Wizard | created by diomsg
 
@@ -10,9 +10,9 @@
 ## Dependencies: ArcaneWizardLibrary
 ## X-Library-Revision: 1
 
-## Notes: This addon tracks the duration and results of supported boss encounters. A customizable timer shows the current fight’s duration, and the results are saved.
-## Notes-deDE: Dieses Addon erfasst die Dauer und Ergebnisse unterstützter Bosskämpfe. Die laufende Kampfzeit erscheint in einer anpassbaren Anzeige, und die Ergebnisse werden gespeichert.
-## Notes-ruRU: Этот аддон отслеживает длительность и результаты поддерживаемых боёв с боссами. Настраиваемый таймер показывает длительность текущего боя, а результаты сохраняются.
+## Notes: This addon records the duration and results of supported boss encounters. It handles the timing automatically, so you can focus on the fight.
+## Notes-deDE: Dieses Addon erfasst die Dauer und Ergebnisse unterstützter Bosskämpfe. Die Zeitmessung läuft automatisch, damit du dich auf den Kampf konzentrieren kannst.
+## Notes-ruRU: Этот аддон записывает длительность и результаты поддерживаемых боёв с боссами. Он автоматически измеряет время, позволяя сосредоточиться на бое.
 
 ## LoadSavedVariablesFirst: 1
 ## SavedVariables: Horatum_Options_v3, Horatum_CombatEncounterData_v2
