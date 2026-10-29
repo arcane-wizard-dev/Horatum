@@ -15,7 +15,8 @@
 ## Notes-ruRU: Этот аддон записывает длительность и результаты поддерживаемых боёв с боссами. Он автоматически измеряет время, позволяя сосредоточиться на бое.
 
 ## LoadSavedVariablesFirst: 1
-## SavedVariables: Horatum_Options_v3, Horatum_CombatEncounterData_v2
+## SavedVariables: Horatum_Options_v3
+## SavedVariablesPerCharacter: Horatum_CombatEncounterData
 
 ## AddonCompartmentFuncOnEnter: Horatum_CompartmentOnEnter
 ## AddonCompartmentFuncOnLeave: Horatum_CompartmentOnLeave

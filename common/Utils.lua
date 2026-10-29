@@ -70,11 +70,11 @@ function Utils:InitializeDatabase()
 	HRT.Settings.combatTimeTracker = dbInit.settings["combat-time-tracker"]
 	HRT.Settings.combatOverview = dbInit.settings["combat-overview"]
 
-	if not Horatum_CombatEncounterData_v2 then
-		Horatum_CombatEncounterData_v2 = {}
+	if type(Horatum_CombatEncounterData) ~= "table" then
+		Horatum_CombatEncounterData = {}
 	end
 
-	HRT.Data.combatEncounter = Horatum_CombatEncounterData_v2
+	HRT.Data.combatEncounter = Horatum_CombatEncounterData
 
 	return dbInit
 end

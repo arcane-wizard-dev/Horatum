@@ -91,29 +91,25 @@ Horatum_Options_v3 = {
 	},
 }
 
-Horatum_CombatEncounterData_v2 = {
+Horatum_CombatEncounterData = {
 	["123"] = {
 		["14"] = {
 			["0"] = {
-				["bestVictory"] = 92.375,
-				["victories"] = 3,
-				["wipes"] = 2,
+				["bestVictory"] = 105.25,
+				["victories"] = 2,
+				["wipes"] = 0,
 			},
 		},
-		["15"] = {
-			["0"] = {
+		["208"] = {
+			["8"] = {
+				["bestVictory"] = 65.125,
+				["victories"] = 1,
+				["wipes"] = 2,
+			},
+			["11"] = {
 				["bestVictory"] = -1,
 				["victories"] = 0,
 				["wipes"] = 1,
-			},
-		},
-	},
-	["456"] = {
-		["1"] = {
-			["0"] = {
-				["bestVictory"] = 45.25,
-				["victories"] = 1,
-				["wipes"] = 0,
 			},
 		},
 	},

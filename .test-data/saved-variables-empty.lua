@@ -3,4 +3,4 @@
 
 Horatum_Options_v3 = {}
 
-Horatum_CombatEncounterData_v2 = {}
+Horatum_CombatEncounterData = {}
