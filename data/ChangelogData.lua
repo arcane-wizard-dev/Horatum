@@ -12,6 +12,16 @@ HRT.CHANGELOG = {
 		version = version,
 		date = buildDate ~= "" and buildDate or nil,
 		entries = {
+			"Added: TOC version for patch 12.1.7 [retail]",
+			"Changed: Combat times, victories, and wipes are now saved per character, starting with empty records",
+			"Updated: Addon description",
+			"Removed: TOC version for patch 12.1.0 [retail]"
+		}
+	},
+	{
+		version = "v2.37",
+		date = "2026-10-28",
+		entries = {
 			"Added: Startup check for the minimum required Library revision",
 			"Updated: deDE, enUS, ruRU localizations",
 			"Updated: Addon description",
@@ -73,14 +83,6 @@ HRT.CHANGELOG = {
 		version = "v2.29",
 		date = "2026-09-27",
 		entries = {
-			"Minor code adjustments"
-		}
-	},
-	{
-		version = "v2.28",
-		date = "2026-09-22",
-		entries = {
-			"Adapted to the latest version of Arcane Wizard: Library to ensure full compatibility",
 			"Minor code adjustments"
 		}
 	}
