@@ -36,14 +36,14 @@ L["chat.current-record"] = "Aktuelle Bestzeit für |cnGOLD_FONT_COLOR:%s|r (%s):
 L["chat.new-record"] = "Neue Bestzeit für |cnGOLD_FONT_COLOR:%s|r (%s): %s."
 
 L["chat.first-victory"] = "Erster Sieg über |cnGOLD_FONT_COLOR:%s|r (%s). (Niederlagen: %s)"
-L["chat.another-victory"] = "|cnGOLD_FONT_COLOR:%s|r (%s) wurde bereits besiegt. (Siege: %s - Niederlagen: %s)"
+L["chat.another-victory"] = "Erneuter Sieg über |cnGOLD_FONT_COLOR:%s|r (%s). (Siege: %s - Niederlagen: %s)"
 L["chat.first-wipe"] = "Erste Niederlage gegen |cnGOLD_FONT_COLOR:%s|r (%s). (Siege: %s)"
-L["chat.another-wipe"] = "Gegen |cnGOLD_FONT_COLOR:%s|r (%s) gab es bereits Niederlagen. (Siege: %s - Niederlagen: %s)"
+L["chat.another-wipe"] = "Erneute Niederlage gegen |cnGOLD_FONT_COLOR:%s|r (%s). (Siege: %s - Niederlagen: %s)"
 
 -- Combat Time Tracker
 
 L["combat-time-tracker.button-reset"] = "Anzeige zurücksetzen"
-L["combat-time-tracker.wait-combat"] = "Warte auf Kampfbeginn…"
+L["combat-time-tracker.wait-combat"] = "Warten auf Kampfbeginn…"
 L["combat-time-tracker.dungeon"] = "Dungeon"
 L["combat-time-tracker.raid"] = "Schlachtzug"
 L["combat-time-tracker.event"] = "Ereignis"

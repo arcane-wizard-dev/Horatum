@@ -10,7 +10,7 @@ local L = HRT.Localization
 
 L["options.general"] = "Общие параметры"
 L["options.general.notification.name"] = "Уведомления в чате"
-L["options.general.notification.tooltip"] = "Включает уведомления в чате после боя."
+L["options.general.notification.tooltip"] = "Показывает уведомление в чате после боя."
 L["options.general.minimap-button.name"] = "Кнопка у мини-карты"
 L["options.general.minimap-button.tooltip"] = "Показывает кнопку у мини-карты."
 L["options.general.debug-mode.name"] = "Режим отладки"

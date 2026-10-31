@@ -44,9 +44,9 @@ L["chat.current-record"] = "Current best time for |cnGOLD_FONT_COLOR:%s|r (%s): 
 L["chat.new-record"] = "New best time for |cnGOLD_FONT_COLOR:%s|r (%s): %s."
 
 L["chat.first-victory"] = "First victory over |cnGOLD_FONT_COLOR:%s|r (%s). (Wipes: %s)"
-L["chat.another-victory"] = "|cnGOLD_FONT_COLOR:%s|r (%s) has already been defeated. (Victories: %s - Wipes: %s)"
+L["chat.another-victory"] = "Another victory over |cnGOLD_FONT_COLOR:%s|r (%s). (Victories: %s - Wipes: %s)"
 L["chat.first-wipe"] = "First wipe against |cnGOLD_FONT_COLOR:%s|r (%s). (Victories: %s)"
-L["chat.another-wipe"] = "There have already been wipes against |cnGOLD_FONT_COLOR:%s|r (%s). (Victories: %s - Wipes: %s)"
+L["chat.another-wipe"] = "Another wipe against |cnGOLD_FONT_COLOR:%s|r (%s). (Victories: %s - Wipes: %s)"
 
 -- Combat Time Tracker
 

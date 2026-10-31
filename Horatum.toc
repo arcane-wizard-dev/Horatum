@@ -1,4 +1,5 @@
 ## Interface: 120107, 120105, 16001
+## AllowLoadGameType: standard, forever
 ## Title: Horatum
 ## Author: Arcane Wizard | created by diomsg
 

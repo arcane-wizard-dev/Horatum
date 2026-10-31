@@ -30,7 +30,7 @@ local displayedTime = 0
 --- Frames ---
 --------------
 
-local CombatTimeTrackerFrame = nil
+local CombatTimeTrackerFrame = nil ---@type HoratumCombatTimeTrackerFrame
 
 -----------------------
 --- Local Functions ---
@@ -135,7 +135,7 @@ end
 -----------------------
 
 local function InitializeFrames()
-	---@class HoratumCombatTimeTrackerFrame: ArcaneWizardLibraryPopupFrame
+	---@class (partial) HoratumCombatTimeTrackerFrame
 	CombatTimeTrackerFrame = AWL.Frames:CreatePopup({
 		addonName = addonName,
 		width = CombatTimeTrackerConfig.width,
