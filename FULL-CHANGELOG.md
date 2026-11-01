@@ -1,3 +1,8 @@
+**v2.39 (2026-11-01)**
+- Changed: Clarified labels in the options menu
+- Changed: Limited loading to Retail and Forever
+- Updated: deDE, enUS, ruRU localizations
+
 **v2.38 (2026-10-29)**
 - Added: TOC version for patch 12.1.7 [retail]
 - Changed: Combat times, victories, and wipes are now saved per character, starting with empty records
