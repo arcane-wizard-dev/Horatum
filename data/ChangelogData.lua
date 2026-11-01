@@ -12,6 +12,15 @@ HRT.CHANGELOG = {
 		version = version,
 		date = buildDate ~= "" and buildDate or nil,
 		entries = {
+			"Changed: Clarified labels in the options menu",
+			"Changed: Limited loading to Retail and Forever",
+			"Updated: deDE, enUS, ruRU localizations"
+		}
+	},
+	{
+		version = "v2.38",
+		date = "2026-10-29",
+		entries = {
 			"Added: TOC version for patch 12.1.7 [retail]",
 			"Changed: Combat times, victories, and wipes are now saved per character, starting with empty records",
 			"Updated: Addon description",
@@ -77,13 +86,6 @@ HRT.CHANGELOG = {
 		date = "2026-10-03",
 		entries = {
 			"Updated: Logo"
-		}
-	},
-	{
-		version = "v2.29",
-		date = "2026-09-27",
-		entries = {
-			"Minor code adjustments"
 		}
 	}
 	-- END GENERATED CHANGELOG
