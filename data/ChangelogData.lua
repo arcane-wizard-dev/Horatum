@@ -12,6 +12,13 @@ HRT.CHANGELOG = {
 		version = version,
 		date = buildDate ~= "" and buildDate or nil,
 		entries = {
+			"Changed: The TOC now excludes only Talebound by game type"
+		}
+	},
+	{
+		version = "v2.39",
+		date = "2026-11-01",
+		entries = {
 			"Changed: Clarified labels in the options menu",
 			"Changed: Limited loading to Retail and Forever",
 			"Updated: deDE, enUS, ruRU localizations"
@@ -79,13 +86,6 @@ HRT.CHANGELOG = {
 		entries = {
 			"Changed: Combat Time Tracker now uses the native Blizzard UI appearance with an optional tooltip border",
 			"Adapted to the latest version of Arcane Wizard: Library to ensure full compatibility"
-		}
-	},
-	{
-		version = "v2.30",
-		date = "2026-10-03",
-		entries = {
-			"Updated: Logo"
 		}
 	}
 	-- END GENERATED CHANGELOG
