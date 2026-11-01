@@ -1,3 +1,6 @@
+**v2.40 (2026-11-01)**
+- Changed: The TOC now excludes only Talebound by game type
+
 **v2.39 (2026-11-01)**
 - Changed: Clarified labels in the options menu
 - Changed: Limited loading to Retail and Forever
