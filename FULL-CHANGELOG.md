@@ -1,3 +1,10 @@
+**v2.41 (2026-11-03)**
+- Added: Completed boss attempts are saved with start and end times, duration, and victory or defeat result
+- Changed: The debug mode option now combines an enable checkbox with a Basic or Advanced level selector
+- Updated: deDE, enUS, ruRU localizations
+- Requires Arcane Wizard: Library revision 2 or later
+- Minor code adjustments
+
 **v2.40 (2026-11-01)**
 - Changed: The TOC now excludes only Talebound by game type
 
