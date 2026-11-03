@@ -12,6 +12,17 @@ HRT.CHANGELOG = {
 		version = version,
 		date = buildDate ~= "" and buildDate or nil,
 		entries = {
+			"Added: Completed boss attempts are saved with start and end times, duration, and victory or defeat result",
+			"Changed: The debug mode option now combines an enable checkbox with a Basic or Advanced level selector",
+			"Updated: deDE, enUS, ruRU localizations",
+			"Requires Arcane Wizard: Library revision 2 or later",
+			"Minor code adjustments"
+		}
+	},
+	{
+		version = "v2.40",
+		date = "2026-11-01",
+		entries = {
 			"Changed: The TOC now excludes only Talebound by game type"
 		}
 	},
@@ -78,14 +89,6 @@ HRT.CHANGELOG = {
 		entries = {
 			"Added: ruRU localization",
 			"Minor code adjustments"
-		}
-	},
-	{
-		version = "v2.31",
-		date = "2026-10-05",
-		entries = {
-			"Changed: Combat Time Tracker now uses the native Blizzard UI appearance with an optional tooltip border",
-			"Adapted to the latest version of Arcane Wizard: Library to ensure full compatibility"
 		}
 	}
 	-- END GENERATED CHANGELOG
