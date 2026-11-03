@@ -17,6 +17,7 @@ Horatum_Options_v3 = {
 		},
 		["general"] = {
 			["debug-mode"] = false,
+			["debug-level"] = "basic",
 			["minimap-button"] = {
 				["hide"] = false,
 				["lock"] = false,
@@ -55,6 +56,7 @@ Horatum_Options_v3 = {
 			},
 			["general"] = {
 				["debug-mode"] = false,
+				["debug-level"] = "advanced",
 				["minimap-button"] = {
 					["hide"] = true,
 					["lock"] = false,
@@ -79,6 +81,7 @@ Horatum_Options_v3 = {
 			},
 			["general"] = {
 				["debug-mode"] = false,
+				["debug-level"] = "basic",
 				["minimap-button"] = {
 					["hide"] = false,
 					["lock"] = false,
@@ -98,6 +101,12 @@ Horatum_CombatEncounterData = {
 				["bestVictory"] = 105.25,
 				["victories"] = 2,
 				["wipes"] = 0,
+				{
+					["startedAt"] = 1793520000,
+					["endedAt"] = 1793520105,
+					["duration"] = 105.25,
+					["result"] = "victory",
+				},
 			},
 		},
 		["208"] = {
@@ -105,11 +114,23 @@ Horatum_CombatEncounterData = {
 				["bestVictory"] = 65.125,
 				["victories"] = 1,
 				["wipes"] = 2,
+				{
+					["startedAt"] = 1793520300,
+					["endedAt"] = 1793520365,
+					["duration"] = 65.125,
+					["result"] = "victory",
+				},
 			},
 			["11"] = {
 				["bestVictory"] = -1,
 				["victories"] = 0,
 				["wipes"] = 1,
+				{
+					["startedAt"] = 1793520400,
+					["endedAt"] = 1793520425,
+					["duration"] = 25.5,
+					["result"] = "defeat",
+				},
 			},
 		},
 	},

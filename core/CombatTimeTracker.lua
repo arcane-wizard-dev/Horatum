@@ -25,6 +25,7 @@ local currentDifficultyText = nil
 local currentOptionalID = 0
 local currentEncounterName = nil
 local displayedTime = 0
+local currentAttempt = nil
 
 --------------
 --- Frames ---
@@ -318,6 +319,9 @@ function CombatTimeTracker:EncounterStart(encounterID, encounterName, difficulty
 	end
 
 	local currentDataSet = HRT.Data.combatEncounter[tostring(currentEncounterID)][tostring(currentDifficultyID)][tostring(currentOptionalID)]
+	currentAttempt = {
+		startedAt = GetServerTime()
+	}
 	currentBestVictory = currentDataSet.bestVictory
 
 	if currentBestVictory >= HRT.COMBAT_TIME_TRACKER_THRESHOLD then
@@ -336,8 +340,15 @@ function CombatTimeTracker:EncounterStart(encounterID, encounterName, difficulty
 end
 
 function CombatTimeTracker:EncounterEnd(success)
+	if not currentAttempt then return end
+
 	CombatTimeTrackerFrame.resetButton:Show()
 	CombatTimeTrackerFrame:SetScript("OnUpdate", nil)
+
+	if success ~= 0 and success ~= 1 then
+		currentAttempt = nil
+		return
+	end
 
 	local finalTime = GetTime() - startTime
 
@@ -360,7 +371,14 @@ function CombatTimeTracker:EncounterEnd(success)
 	displayedTime = finalTime
 	CombatTimeTrackerFrame.timer:SetText(FormatTime(finalTime))
 
+	currentAttempt.endedAt = GetServerTime()
+	currentAttempt.duration = finalTime
+	currentAttempt.result = success == 1 and "victory" or "defeat"
+
 	local currentDataSet = HRT.Data.combatEncounter[tostring(currentEncounterID)][tostring(currentDifficultyID)][tostring(currentOptionalID)]
+	currentDataSet[#currentDataSet + 1] = currentAttempt
+	currentAttempt = nil
+
 	local bestVictory = currentDataSet.bestVictory
 	local victories = currentDataSet.victories
 	local wipes = currentDataSet.wipes

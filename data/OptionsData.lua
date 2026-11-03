@@ -12,6 +12,7 @@ HRT.OPTIONS_DEFAULTS = {
 		},
 		["notification"] = true,
 		["debug-mode"] = false,
+		["debug-level"] = "basic",
 	},
 	["combat-time-tracker"] = {
 		["show-border"] = true,

@@ -68,13 +68,22 @@ function Options:Initialize()
 	})
 
 	-- Debug Mode
-	AWL.Settings:AddCheckbox(category, {
-		variableTable	= HRT.Settings.general,
-		settingKey		= addonName .. "_debug-mode",
-		variableName	= "debug-mode",
-		name			= L["options.general.debug-mode.name"],
-		tooltip			= L["options.general.debug-mode.tooltip"],
-		default			= HRT.OPTIONS_DEFAULTS["general"]["debug-mode"]
+	AWL.Settings:AddCheckboxDropdownCombo(category, layout, {
+		variableTable			= HRT.Settings.general,
+		checkboxSettingKey		= addonName .. "_debug-mode",
+		checkboxVariableName	= "debug-mode",
+		checkboxName			= L["options.general.debug-mode.name"],
+		checkboxTooltip			= L["options.general.debug-mode.tooltip"],
+		checkboxDefault			= HRT.OPTIONS_DEFAULTS.general["debug-mode"],
+		dropdownSettingKey		= addonName .. "_debug-level",
+		dropdownVariableName	= "debug-level",
+		dropdownName			= L["options.general.debug-mode.level.name"],
+		dropdownTooltip			= L["options.general.debug-mode.level.tooltip"],
+		dropdownDefault			= HRT.OPTIONS_DEFAULTS.general["debug-level"],
+		dropdownOptions			= {
+			{value = "basic", label = L["options.general.debug-mode.level.value.basic"]},
+			{value = "advanced", label = L["options.general.debug-mode.level.value.advanced"]}
+		}
 	})
 
 	layout:AddInitializer(CreateSettingsListSectionHeaderInitializer(L["options.combat-time-tracker"]))
@@ -87,9 +96,9 @@ function Options:Initialize()
 		name			= L["options.combat-time-tracker.scale.name"],
 		tooltip			= L["options.combat-time-tracker.scale.tooltip"],
 		default			= HRT.OPTIONS_DEFAULTS["combat-time-tracker"]["scale"],
-		minValue = 50,
-		maxValue = 150,
-		step = 1,
+		minValue		= 50,
+		maxValue		= 150,
+		step			= 1,
 		formatter		= function(value) return value .. " %" end,
 		onClick			= function()
 			CombatTimeTracker:Show()
@@ -105,9 +114,9 @@ function Options:Initialize()
 		name			= L["options.combat-time-tracker.background-transparency.name"],
 		tooltip			= L["options.combat-time-tracker.background-transparency.tooltip"],
 		default			= HRT.OPTIONS_DEFAULTS["combat-time-tracker"]["background-transparency"],
-		minValue = 0,
-		maxValue = 100,
-		step = 1,
+		minValue		= 0,
+		maxValue		= 100,
+		step			= 1,
 		formatter		= function(value) return value .. " %" end,
 		onClick			= function()
 			CombatTimeTracker:Show()
@@ -123,9 +132,9 @@ function Options:Initialize()
 		name			= L["options.combat-time-tracker.decimal-places.name"],
 		tooltip			= L["options.combat-time-tracker.decimal-places.tooltip"],
 		default			= HRT.OPTIONS_DEFAULTS["combat-time-tracker"]["decimal-places"],
-		minValue = 0,
-		maxValue = 3,
-		step = 1,
+		minValue		= 0,
+		maxValue		= 3,
+		step			= 1,
 		formatter		= function(value) return tostring(value) end,
 		onClick			= function()
 			CombatTimeTracker:SetDecimalPlaces()
