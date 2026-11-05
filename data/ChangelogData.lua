@@ -12,6 +12,14 @@ HRT.CHANGELOG = {
 		version = version,
 		date = buildDate ~= "" and buildDate or nil,
 		entries = {
+			"Changed: Debug messages are now converted and formatted only when debug mode is enabled",
+			"Requires Arcane Wizard: Library revision 4 or later"
+		}
+	},
+	{
+		version = "v2.41",
+		date = "2026-11-03",
+		entries = {
 			"Added: Completed boss attempts are saved with start and end times, duration, and victory or defeat result",
 			"Changed: The debug mode option now combines an enable checkbox with a Basic or Advanced level selector",
 			"Updated: deDE, enUS, ruRU localizations",
@@ -81,14 +89,6 @@ HRT.CHANGELOG = {
 		date = "2026-10-12",
 		entries = {
 			"Refactoring of the addon structure and source code"
-		}
-	},
-	{
-		version = "v2.32",
-		date = "2026-10-09",
-		entries = {
-			"Added: ruRU localization",
-			"Minor code adjustments"
 		}
 	}
 	-- END GENERATED CHANGELOG
