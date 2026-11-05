@@ -70,20 +70,20 @@ end
 local function EncounterInfo(difficultyID)
 	local name, instanceType, isHeroic, isChallengeMode, displayHeroic, displayMythic, toggleDifficultyID, isLFR, minPlayers, maxPlayers, isUserSelectable = GetDifficultyInfo(difficultyID)
 
-	Utils:PrintDebug(string.format(
+	Utils:PrintDebug(
 		"Result from GetDifficultyInfo(): name=%s, instanceType=%s, isHeroic=%s, isChallengeMode=%s, displayHeroic=%s, displayMythic=%s, toggleDifficultyID=%s, isLFR=%s, minPlayers=%s, maxPlayers=%s, isUserSelectable=%s",
-		tostring(name),
-		tostring(instanceType),
-		tostring(isHeroic),
-		tostring(isChallengeMode),
-		tostring(displayHeroic),
-		tostring(displayMythic),
-		tostring(toggleDifficultyID),
-		tostring(isLFR),
-		tostring(minPlayers),
-		tostring(maxPlayers),
-		tostring(isUserSelectable)
-	))
+		name,
+		instanceType,
+		isHeroic,
+		isChallengeMode,
+		displayHeroic,
+		displayMythic,
+		toggleDifficultyID,
+		isLFR,
+		minPlayers,
+		maxPlayers,
+		isUserSelectable
+	)
 
 	local labelKey = CombatTimeTrackerData.difficultyLabels[difficultyID]
 
@@ -280,10 +280,10 @@ function CombatTimeTracker:EncounterStart(encounterID, encounterName, difficulty
 
 	local isValidEncounter, optionalID, difficulty = EncounterInfo(difficultyID)
 
-	Utils:PrintDebug(string.format(
+	Utils:PrintDebug(
 		"Result from EncounterInfo(): isValidEncounter=%s, optionalID=%s, difficulty=%s",
-		tostring(isValidEncounter), tostring(optionalID), tostring(difficulty)
-	))
+		isValidEncounter, optionalID, difficulty
+	)
 
 	if not isValidEncounter then return false end
 
@@ -352,10 +352,10 @@ function CombatTimeTracker:EncounterEnd(success)
 
 	local finalTime = GetTime() - startTime
 
-	Utils:PrintDebug(string.format(
+	Utils:PrintDebug(
 		"Unrounded time: finalTime=%s",
-		tostring(finalTime)
-	))
+		finalTime
+	)
 
 	if finalTime < HRT.COMBAT_TIME_TRACKER_THRESHOLD then
 		finalTime = HRT.COMBAT_TIME_TRACKER_THRESHOLD
@@ -363,10 +363,10 @@ function CombatTimeTracker:EncounterEnd(success)
 		finalTime = math.floor(finalTime * 1000 + 0.5) / 1000
 	end
 
-	Utils:PrintDebug(string.format(
+	Utils:PrintDebug(
 		"Rounded time: finalTime=%s",
-		tostring(finalTime)
-	))
+		finalTime
+	)
 
 	displayedTime = finalTime
 	CombatTimeTrackerFrame.timer:SetText(FormatTime(finalTime))

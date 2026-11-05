@@ -68,22 +68,22 @@ function HoratumFrame:ADDON_LOADED(_, addOnName)
 
 	isInitialized = true
 
-	Utils:PrintDebug(string.format(
+	Utils:PrintDebug(
 		"InitializeDatabase: key=%s, createdProfile=%s, createdProfileKey=%s, cleanedOptions=%s, activeProfile=%s",
-		tostring(dbInit.characterGUID),
-		tostring(dbInit.createdProfile),
-		tostring(dbInit.createdProfileKey),
-		tostring(dbInit.cleanedOptions),
-		tostring(dbInit.activeProfile)
-	))
+		dbInit.characterGUID,
+		dbInit.createdProfile,
+		dbInit.createdProfileKey,
+		dbInit.cleanedOptions,
+		dbInit.activeProfile
+	)
 	Utils:PrintDebug("Addon fully loaded.")
 end
 
 function HoratumFrame:ENCOUNTER_START(_, encounterID, encounterName, difficultyID, groupSize)
-	Utils:PrintDebug(string.format(
+	Utils:PrintDebug(
 		"Event 'ENCOUNTER_START' fired. Payload: encounterID=%s, encounterName=%s, difficultyID=%s, groupSize=%s",
-		tostring(encounterID), tostring(encounterName), tostring(difficultyID), tostring(groupSize)
-	))
+		encounterID, encounterName, difficultyID, groupSize
+	)
 
 	isInCombat = CombatTimeTracker:EncounterStart(encounterID, encounterName, difficultyID)
 
@@ -93,10 +93,10 @@ function HoratumFrame:ENCOUNTER_START(_, encounterID, encounterName, difficultyI
 end
 
 function HoratumFrame:ENCOUNTER_END(_, encounterID, encounterName, difficultyID, groupSize, success)
-	Utils:PrintDebug(string.format(
+	Utils:PrintDebug(
 		"Event 'ENCOUNTER_END' fired. Payload: encounterID=%s, encounterName=%s, difficultyID=%s, groupSize=%s, success=%s",
-		tostring(encounterID), tostring(encounterName), tostring(difficultyID), tostring(groupSize), tostring(success)
-	))
+		encounterID, encounterName, difficultyID, groupSize, success
+	)
 
 	if isInCombat then
 		CombatTimeTracker:EncounterEnd(success)

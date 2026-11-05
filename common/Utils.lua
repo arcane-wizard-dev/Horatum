@@ -28,10 +28,10 @@ function Utils:PrintMessage(msg)
 	PrintChatMessage(NORMAL_FONT_COLOR, addonName, msg)
 end
 
-function Utils:PrintDebug(msg)
+function Utils:PrintDebug(msg, ...)
 	if not HRT.Settings.general["debug-mode"] then return end
 
-	Addon:PrintDebug(msg)
+	Addon:PrintDebug(msg, ...)
 end
 
 function Utils:OpenSettings()
