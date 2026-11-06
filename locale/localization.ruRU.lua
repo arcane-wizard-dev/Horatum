@@ -14,9 +14,9 @@ L["options.general.notification.tooltip"] = "Показывает уведомл
 L["options.general.minimap-button.name"] = "Кнопка у мини-карты"
 L["options.general.minimap-button.tooltip"] = "Показывает кнопку у мини-карты."
 L["options.general.debug-mode.name"] = "Режим отладки"
-L["options.general.debug-mode.tooltip"] = "Показывает дополнительную отладочную информацию в чате."
+L["options.general.debug-mode.tooltip"] = "Показывает в чате отладочные сообщения выбранного уровня."
 L["options.general.debug-mode.level.name"] = "Уровень отладки"
-L["options.general.debug-mode.level.tooltip"] = "Задаёт уровень отладки. Сейчас оба уровня показывают одинаковые сообщения."
+L["options.general.debug-mode.level.tooltip"] = "Базовый уровень показывает основные сообщения. Расширенный также показывает технические подробности."
 L["options.general.debug-mode.level.value.basic"] = "Базовый"
 L["options.general.debug-mode.level.value.advanced"] = "Расширенный"
 

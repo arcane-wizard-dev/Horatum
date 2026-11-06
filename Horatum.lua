@@ -68,7 +68,7 @@ function HoratumFrame:ADDON_LOADED(_, addOnName)
 
 	isInitialized = true
 
-	Utils:PrintDebug(
+	Utils:PrintDebugAdvanced(
 		"InitializeDatabase: key=%s, createdProfile=%s, createdProfileKey=%s, cleanedOptions=%s, activeProfile=%s",
 		dbInit.characterGUID,
 		dbInit.createdProfile,
@@ -80,7 +80,7 @@ function HoratumFrame:ADDON_LOADED(_, addOnName)
 end
 
 function HoratumFrame:ENCOUNTER_START(_, encounterID, encounterName, difficultyID, groupSize)
-	Utils:PrintDebug(
+	Utils:PrintDebugAdvanced(
 		"Event 'ENCOUNTER_START' fired. Payload: encounterID=%s, encounterName=%s, difficultyID=%s, groupSize=%s",
 		encounterID, encounterName, difficultyID, groupSize
 	)
@@ -93,7 +93,7 @@ function HoratumFrame:ENCOUNTER_START(_, encounterID, encounterName, difficultyI
 end
 
 function HoratumFrame:ENCOUNTER_END(_, encounterID, encounterName, difficultyID, groupSize, success)
-	Utils:PrintDebug(
+	Utils:PrintDebugAdvanced(
 		"Event 'ENCOUNTER_END' fired. Payload: encounterID=%s, encounterName=%s, difficultyID=%s, groupSize=%s, success=%s",
 		encounterID, encounterName, difficultyID, groupSize, success
 	)

@@ -70,7 +70,7 @@ end
 local function EncounterInfo(difficultyID)
 	local name, instanceType, isHeroic, isChallengeMode, displayHeroic, displayMythic, toggleDifficultyID, isLFR, minPlayers, maxPlayers, isUserSelectable = GetDifficultyInfo(difficultyID)
 
-	Utils:PrintDebug(
+	Utils:PrintDebugAdvanced(
 		"Result from GetDifficultyInfo(): name=%s, instanceType=%s, isHeroic=%s, isChallengeMode=%s, displayHeroic=%s, displayMythic=%s, toggleDifficultyID=%s, isLFR=%s, minPlayers=%s, maxPlayers=%s, isUserSelectable=%s",
 		name,
 		instanceType,
@@ -280,7 +280,7 @@ function CombatTimeTracker:EncounterStart(encounterID, encounterName, difficulty
 
 	local isValidEncounter, optionalID, difficulty = EncounterInfo(difficultyID)
 
-	Utils:PrintDebug(
+	Utils:PrintDebugAdvanced(
 		"Result from EncounterInfo(): isValidEncounter=%s, optionalID=%s, difficulty=%s",
 		isValidEncounter, optionalID, difficulty
 	)
@@ -352,7 +352,7 @@ function CombatTimeTracker:EncounterEnd(success)
 
 	local finalTime = GetTime() - startTime
 
-	Utils:PrintDebug(
+	Utils:PrintDebugAdvanced(
 		"Unrounded time: finalTime=%s",
 		finalTime
 	)
@@ -363,7 +363,7 @@ function CombatTimeTracker:EncounterEnd(success)
 		finalTime = math.floor(finalTime * 1000 + 0.5) / 1000
 	end
 
-	Utils:PrintDebug(
+	Utils:PrintDebugAdvanced(
 		"Rounded time: finalTime=%s",
 		finalTime
 	)
