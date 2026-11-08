@@ -113,7 +113,7 @@ local function EncounterInfo(difficultyID)
 	return false, 0, nil
 end
 
-local function UpdateTimerFrame(self, elapsed)
+local function UpdateTimerFrame()
 	local currentTime = GetTime() - startTime
 	displayedTime = currentTime
 	CombatTimeTrackerFrame.timer:SetText(FormatTime(currentTime))
