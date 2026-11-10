@@ -9,7 +9,7 @@
 ## DefaultState: enabled
 
 ## Dependencies: ArcaneWizardLibrary
-## X-Library-Revision: 4
+## X-Library-Revision: 5
 
 ## Notes: This addon records the duration and results of supported boss encounters. It handles the timing automatically, so you can focus on the fight.
 ## Notes-deDE: Dieses Addon erfasst die Dauer und Ergebnisse unterstützter Bosskämpfe. Die Zeitmessung läuft automatisch, damit du dich auf den Kampf konzentrieren kannst.
