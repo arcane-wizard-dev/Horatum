@@ -12,6 +12,15 @@ HRT.CHANGELOG = {
 		version = version,
 		date = buildDate ~= "" and buildDate or nil,
 		entries = {
+			"Changed: Reworked the options menu to prevent errors in Blizzard's settings and added a button to restore default values",
+			"Removed: Addon options from Blizzard's settings search",
+			"Requires Arcane Wizard: Library revision 5 or later"
+		}
+	},
+	{
+		version = "v2.44",
+		date = "2026-11-08",
+		entries = {
 			"Minor code adjustments"
 		}
 	},
@@ -83,13 +92,6 @@ HRT.CHANGELOG = {
 		date = "2026-10-21",
 		entries = {
 			"Changed: Chat command 'show' renamed to 'tracker'"
-		}
-	},
-	{
-		version = "v2.35",
-		date = "2026-10-16",
-		entries = {
-			"Adapted to the latest version of Arcane Wizard: Library to ensure full compatibility"
 		}
 	}
 	-- END GENERATED CHANGELOG
