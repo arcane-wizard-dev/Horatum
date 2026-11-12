@@ -26,12 +26,14 @@ local currentOptionalID = 0
 local currentEncounterName = nil
 local displayedTime = 0
 local currentAttempt = nil
+local currentDataSet = nil
 
 local timeDecimalPlaces = 0
 local timeFactor = 1
 local timeFormat = "%02d:%02d"
 
 local lastTimerText = nil
+local lastTimerTick = nil
 local lastBarColor = nil
 
 --------------
@@ -83,6 +85,7 @@ end
 
 local function SetTimerText(text)
 	lastTimerText = text
+	lastTimerTick = nil
 	CombatTimeTrackerFrame.timer:SetText(text)
 end
 
@@ -141,10 +144,16 @@ local function UpdateTimerFrame()
 	local currentTime = GetTime() - startTime
 	displayedTime = currentTime
 
-	local text = FormatTime(currentTime)
+	local tick = math.floor(currentTime * timeFactor)
 
-	if text ~= lastTimerText then
-		SetTimerText(text)
+	if tick ~= lastTimerTick then
+		local text = FormatTime(currentTime)
+
+		if text ~= lastTimerText then
+			SetTimerText(text)
+		end
+
+		lastTimerTick = tick
 	end
 
 	if currentBestVictory >= HRT.COMBAT_TIME_TRACKER_THRESHOLD then
@@ -347,7 +356,7 @@ function CombatTimeTracker:EncounterStart(encounterID, encounterName, difficulty
 	local difficultyData = encounterData[difficultyKey] or {}
 	encounterData[difficultyKey] = difficultyData
 
-	local currentDataSet = difficultyData[optionalKey] or {
+	currentDataSet = difficultyData[optionalKey] or {
 		bestVictory = -1,
 		victories = 0,
 		wipes = 0
@@ -374,13 +383,14 @@ function CombatTimeTracker:EncounterStart(encounterID, encounterName, difficulty
 end
 
 function CombatTimeTracker:EncounterEnd(success)
-	if not currentAttempt then return end
+	if not currentAttempt or not currentDataSet then return end
 
 	CombatTimeTrackerFrame.resetButton:Show()
 	CombatTimeTrackerFrame:SetScript("OnUpdate", nil)
 
 	if success ~= 0 and success ~= 1 then
 		currentAttempt = nil
+		currentDataSet = nil
 		return
 	end
 
@@ -409,20 +419,21 @@ function CombatTimeTracker:EncounterEnd(success)
 	currentAttempt.duration = finalTime
 	currentAttempt.result = success == 1 and "victory" or "defeat"
 
-	local currentDataSet = HRT.Data.combatEncounter[tostring(currentEncounterID)][tostring(currentDifficultyID)][tostring(currentOptionalID)]
-	currentDataSet[#currentDataSet + 1] = currentAttempt
+	local dataSet = currentDataSet
+	currentDataSet = nil
+	dataSet[#dataSet + 1] = currentAttempt
 	currentAttempt = nil
 
-	local bestVictory = currentDataSet.bestVictory
-	local victories = currentDataSet.victories
-	local wipes = currentDataSet.wipes
+	local bestVictory = dataSet.bestVictory
+	local victories = dataSet.victories
+	local wipes = dataSet.wipes
 
 	if success == 1 then
 		victories = victories + 1
-		currentDataSet.victories = victories
+		dataSet.victories = victories
 
 		if bestVictory < HRT.COMBAT_TIME_TRACKER_THRESHOLD or finalTime < bestVictory then
-			currentDataSet.bestVictory = finalTime
+			dataSet.bestVictory = finalTime
 		end
 
 		if HRT.Settings.general["notification"] then
@@ -440,7 +451,7 @@ function CombatTimeTracker:EncounterEnd(success)
 		end
 	else
 		wipes = wipes + 1
-		currentDataSet.wipes = wipes
+		dataSet.wipes = wipes
 
 		if HRT.Settings.general["notification"] then
 			if bestVictory >= HRT.COMBAT_TIME_TRACKER_THRESHOLD then
