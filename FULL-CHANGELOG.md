@@ -1,3 +1,7 @@
+**v2.46 (2026-11-14)**
+- Changed: Reduced repeated calculations, time formatting, and display updates in the combat timer
+- Minor code adjustments
+
 **v2.45 (2026-11-10)**
 - Changed: Reworked the options menu to prevent errors in Blizzard's settings and added a button to restore default values
 - Removed: Addon options from Blizzard's settings search
