@@ -12,6 +12,14 @@ HRT.CHANGELOG = {
 		version = version,
 		date = buildDate ~= "" and buildDate or nil,
 		entries = {
+			"Changed: Reduced repeated calculations, time formatting, and display updates in the combat timer",
+			"Minor code adjustments"
+		}
+	},
+	{
+		version = "v2.45",
+		date = "2026-11-10",
+		entries = {
 			"Changed: Reworked the options menu to prevent errors in Blizzard's settings and added a button to restore default values",
 			"Removed: Addon options from Blizzard's settings search",
 			"Requires Arcane Wizard: Library revision 5 or later"
@@ -85,13 +93,6 @@ HRT.CHANGELOG = {
 			"Updated: deDE, enUS, ruRU localizations",
 			"Updated: Addon description",
 			"Minor code adjustments"
-		}
-	},
-	{
-		version = "v2.36",
-		date = "2026-10-21",
-		entries = {
-			"Changed: Chat command 'show' renamed to 'tracker'"
 		}
 	}
 	-- END GENERATED CHANGELOG
