@@ -111,6 +111,6 @@ HoratumFrame:RegisterEvent("ENCOUNTER_START")
 HoratumFrame:RegisterEvent("ENCOUNTER_END")
 HoratumFrame:SetScript("OnEvent", HoratumFrame.OnEvent)
 
-SLASH_Horatum1, SLASH_Horatum2 = '/hrt', '/horatum'
+SLASH_Horatum1, SLASH_Horatum2 = "/hrt", "/horatum"
 
 SlashCmdList["Horatum"] = SlashCommand

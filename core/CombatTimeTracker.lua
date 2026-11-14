@@ -95,7 +95,9 @@ local function SetBarColor(color)
 end
 
 local function EncounterInfo(difficultyID)
-	local name, instanceType, isHeroic, isChallengeMode, displayHeroic, displayMythic, toggleDifficultyID, isLFR, minPlayers, maxPlayers, isUserSelectable = GetDifficultyInfo(difficultyID)
+	local name, instanceType, isHeroic, isChallengeMode,
+		displayHeroic, displayMythic, toggleDifficultyID, isLFR,
+		minPlayers, maxPlayers, isUserSelectable = GetDifficultyInfo(difficultyID)
 
 	Utils:PrintDebugAdvanced(
 		"Result from GetDifficultyInfo(): name=%s, instanceType=%s, isHeroic=%s, isChallengeMode=%s, displayHeroic=%s, displayMythic=%s, toggleDifficultyID=%s, isLFR=%s, minPlayers=%s, maxPlayers=%s, isUserSelectable=%s",
@@ -229,8 +231,14 @@ local function InitializeFrames()
 	timeBarBackground:SetColorTexture(unpack(CombatTimeTrackerConfig.timeBar.backgroundColor))
 
 	local timeBarBorder = CreateFrame("Frame", nil, CombatTimeTrackerFrame.timeBar, "BackdropTemplate")
-	timeBarBorder:SetPoint("TOPLEFT", CombatTimeTrackerFrame.timeBar, "TOPLEFT", -CombatTimeTrackerConfig.timeBar.border.padding, CombatTimeTrackerConfig.timeBar.border.padding)
-	timeBarBorder:SetPoint("BOTTOMRIGHT", CombatTimeTrackerFrame.timeBar, "BOTTOMRIGHT", CombatTimeTrackerConfig.timeBar.border.padding, -CombatTimeTrackerConfig.timeBar.border.padding)
+	timeBarBorder:SetPoint(
+		"TOPLEFT", CombatTimeTrackerFrame.timeBar, "TOPLEFT",
+		-CombatTimeTrackerConfig.timeBar.border.padding, CombatTimeTrackerConfig.timeBar.border.padding
+	)
+	timeBarBorder:SetPoint(
+		"BOTTOMRIGHT", CombatTimeTrackerFrame.timeBar, "BOTTOMRIGHT",
+		CombatTimeTrackerConfig.timeBar.border.padding, -CombatTimeTrackerConfig.timeBar.border.padding
+	)
 	timeBarBorder:SetBackdrop({
 		edgeFile = CombatTimeTrackerConfig.timeBar.border.texture,
 		edgeSize = CombatTimeTrackerConfig.timeBar.border.edgeSize
@@ -255,7 +263,10 @@ local function InitializeFrames()
 
 	CombatTimeTrackerFrame.resetButton = CreateFrame("Button", nil, CombatTimeTrackerFrame)
 	CombatTimeTrackerFrame.resetButton:SetSize(CombatTimeTrackerConfig.resetButton.size, CombatTimeTrackerConfig.resetButton.size)
-	CombatTimeTrackerFrame.resetButton:SetPoint("BOTTOMRIGHT", CombatTimeTrackerFrame, "BOTTOMRIGHT", CombatTimeTrackerConfig.resetButton.x, CombatTimeTrackerConfig.resetButton.y)
+	CombatTimeTrackerFrame.resetButton:SetPoint(
+		"BOTTOMRIGHT", CombatTimeTrackerFrame, "BOTTOMRIGHT",
+		CombatTimeTrackerConfig.resetButton.x, CombatTimeTrackerConfig.resetButton.y
+	)
 	CombatTimeTrackerFrame.resetButton:SetNormalTexture("Interface\\Buttons\\UI-RefreshButton")
 	CombatTimeTrackerFrame.resetButton:SetHighlightTexture("Interface\\Buttons\\UI-Panel-MinimizeButton-Highlight")
 	CombatTimeTrackerFrame.resetButton:SetPushedTexture("Interface\\Buttons\\UI-RefreshButton")
@@ -330,7 +341,9 @@ function CombatTimeTracker:EncounterStart(encounterID, encounterName, difficulty
 		isValidEncounter, optionalID, difficulty
 	)
 
-	if not isValidEncounter then return false end
+	if not isValidEncounter then
+		return false
+	end
 
 	startTime = GetTime()
 	displayedTime = 0
@@ -391,6 +404,7 @@ function CombatTimeTracker:EncounterEnd(success)
 	if success ~= 0 and success ~= 1 then
 		currentAttempt = nil
 		currentDataSet = nil
+
 		return
 	end
 
