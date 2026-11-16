@@ -36,8 +36,10 @@ local function SlashCommand(msg)
 		AWL.Frames:OpenChangelog(addonName, HRT.CHANGELOG)
 	elseif command == "tracker" then
 		CombatTimeTracker:Show()
+	elseif command == "help" then
+		Addon:PrintSlashHelp(SLASH_Horatum1, {"changelog", "tracker"})
 	else
-		Utils:PrintDebug("These arguments are not accepted.")
+		Addon:PrintSlashHelp(SLASH_Horatum1)
 	end
 end
 
