@@ -12,6 +12,14 @@ HRT.CHANGELOG = {
 		version = version,
 		date = buildDate ~= "" and buildDate or nil,
 		entries = {
+			"Added: A help command lists available slash commands, and unknown commands show a hint in chat",
+			"Requires Arcane Wizard: Library revision 6 or later"
+		}
+	},
+	{
+		version = "v2.46",
+		date = "2026-11-14",
+		entries = {
 			"Changed: Reduced repeated calculations, time formatting, and display updates in the combat timer",
 			"Minor code adjustments"
 		}
@@ -83,16 +91,6 @@ HRT.CHANGELOG = {
 			"Changed: Combat times, victories, and wipes are now saved per character, starting with empty records",
 			"Updated: Addon description",
 			"Removed: TOC version for patch 12.1.0 [retail]"
-		}
-	},
-	{
-		version = "v2.37",
-		date = "2026-10-28",
-		entries = {
-			"Added: Startup check for the minimum required Library revision",
-			"Updated: deDE, enUS, ruRU localizations",
-			"Updated: Addon description",
-			"Minor code adjustments"
 		}
 	}
 	-- END GENERATED CHANGELOG
