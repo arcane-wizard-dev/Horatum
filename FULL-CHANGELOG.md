@@ -1,3 +1,7 @@
+**v2.47 (2026-11-17)**
+- Added: A help command lists available slash commands, and unknown commands show a hint in chat
+- Requires Arcane Wizard: Library revision 6 or later
+
 **v2.46 (2026-11-14)**
 - Changed: Reduced repeated calculations, time formatting, and display updates in the combat timer
 - Minor code adjustments
