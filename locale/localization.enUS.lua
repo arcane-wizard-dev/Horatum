@@ -14,6 +14,15 @@ HRT.Localization = setmetatable({}, {
 
 local L = HRT.Localization
 
+-- Help
+
+L["help.tracker"] = "Shows the combat time tracker."
+
+L["help.faq.encounter-start.question"] = "Why does the combat timer start for some enemies but not others?"
+L["help.faq.encounter-start.answer"] = "Horatum starts the timer when the game reports the start of a supported boss encounter. Ordinary fights do not trigger the timer."
+L["help.faq.reset-display.question"] = "Does \"Reset Display\" also clear the best time?"
+L["help.faq.reset-display.answer"] = "No. The button sets the timer to zero and shows \"Waiting for combat to begin…\" again. Recorded best times, victories, and wipes are kept."
+
 -- Options
 
 L["options.general"] = "General Options"

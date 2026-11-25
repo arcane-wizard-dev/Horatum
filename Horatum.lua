@@ -37,7 +37,7 @@ local function SlashCommand(msg)
 	elseif command == "tracker" then
 		CombatTimeTracker:Show()
 	elseif command == "help" then
-		Addon:PrintSlashHelp(SLASH_Horatum1, {"changelog", "tracker"})
+		Utils.OpenHelp()
 	else
 		Addon:PrintSlashHelp(SLASH_Horatum1)
 	end

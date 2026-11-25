@@ -170,7 +170,7 @@ function Options:Initialize()
 	})
 
 	-- About Section
-	AWL.Settings:AddAboutSection(layout, addonName, HRT.CHANGELOG)
+	AWL.Settings:AddAboutSection(layout, addonName, HRT.CHANGELOG, Utils.OpenHelp)
 
 	Settings.RegisterAddOnCategory(category)
 

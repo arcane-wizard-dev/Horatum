@@ -40,6 +40,15 @@ function Utils:PrintDebugAdvanced(msg, ...)
 	Addon:PrintDebug(msg, ...)
 end
 
+function Utils.OpenHelp()
+	AWL.Frames:OpenSlashHelp(addonName, {SLASH_Horatum1, SLASH_Horatum2}, {
+		{name = "tracker", description = L["help.tracker"]}
+	}, {
+		{question = L["help.faq.encounter-start.question"], answer = L["help.faq.encounter-start.answer"]},
+		{question = L["help.faq.reset-display.question"], answer = L["help.faq.reset-display.answer"]}
+	})
+end
+
 function Utils:OpenSettings()
 	if not Addon:OpenCategory() then
 		self:PrintDebug("In combat. The options menu cannot be opened.")

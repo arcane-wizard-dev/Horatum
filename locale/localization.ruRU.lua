@@ -6,6 +6,15 @@ if GetLocale() ~= "ruRU" then return end
 
 local L = HRT.Localization
 
+-- Help
+
+L["help.tracker"] = "Показывает таймер боя."
+
+L["help.faq.encounter-start.question"] = "Почему таймер боя запускается не для всех противников?"
+L["help.faq.encounter-start.answer"] = "Horatum запускает таймер, когда игра сообщает о начале поддерживаемого боя с боссом. В обычных боях таймер не запускается."
+L["help.faq.reset-display.question"] = "Удаляется ли лучшее время при нажатии «Сбросить показания»?"
+L["help.faq.reset-display.answer"] = "Нет. Таймер обнуляется, и снова появляется надпись «Ожидание начала боя…». Лучшие результаты, победы и поражения сохраняются."
+
 -- Options
 
 L["options.general"] = "Общие параметры"

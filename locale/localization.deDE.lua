@@ -6,6 +6,15 @@ if GetLocale() ~= "deDE" then return end
 
 local L = HRT.Localization
 
+-- Help
+
+L["help.tracker"] = "Blendet die Kampfzeitanzeige ein."
+
+L["help.faq.encounter-start.question"] = "Warum startet die Kampfzeitanzeige bei manchen Gegnern nicht?"
+L["help.faq.encounter-start.answer"] = "Die Zeitmessung beginnt, sobald das Spiel den Beginn eines unterstützten Bosskampfs meldet. Gewöhnliche Kämpfe gegen andere Gegner lösen keine Messung aus."
+L["help.faq.reset-display.question"] = "Löscht „Anzeige zurücksetzen“ auch die Bestzeit?"
+L["help.faq.reset-display.answer"] = "Nein. Die Schaltfläche setzt die angezeigte Zeit auf null und zeigt wieder „Warten auf Kampfbeginn…“ an. Gespeicherte Bestzeiten, Siege und Niederlagen bleiben erhalten."
+
 -- Options
 
 L["options.general"] = "Allgemeine Einstellungen"
