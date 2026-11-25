@@ -41,7 +41,7 @@ Individual features and display options can be configured in the addon settings.
 To manage the addon, type the following commands in chat and press Enter:
 
 * Type `/hrt` or `/horatum` to access the addon options menu.
-* Type either command above followed by `help` to see the available chat commands and answers to frequently asked questions.
+* Type `/hrt help` or `/horatum help` to see the available chat commands and answers to frequently asked questions.
 * Type `/hrt changelog` or `/horatum changelog` to open the changelog.
 * Type `/hrt tracker` or `/horatum tracker` to manually display the Combat Time Tracker.
 
